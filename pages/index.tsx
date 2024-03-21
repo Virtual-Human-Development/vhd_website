@@ -14,7 +14,7 @@ export default function Home() {
           <div className="grid grid-cols-2">
             <div className="flex space-x-4 items-center">
               <a href="#" className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                <span className="font-bold">VHD</span>
+                <span className="font-bold">VHD...</span>
               </a>
               <div className="hidden md:flex space-x-2">
                 <a href="#" className="py-5 px-3 text-gray-900 hover:text-gray-600">About</a>
