@@ -60,16 +60,26 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
             <div className="flex items-center">
-              <link href="/" style={{ color: 'var(--text-color)' }}>
-                <span className="font-bold">VHD</span>
-              </link>
+              <Link href="/" passHref>
+                <a style={{ color: 'var(--text-color)' }}><span className="font-bold">VHD</span></a>
+              </Link>
             </div>
             <div className="flex justify-center md:flex md:space-x-2">
-              <link href="/about" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</link>
-              <link href="/events" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</link>
-              <link href="/team" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</link>
-              <link href="/blog" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</link>
-              <link href="/sponsorship" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</link>
+              <Link href="/about" passHref>
+                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</a>
+              </Link>
+              <Link href="/events" passHref>
+                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</a>
+              </Link>
+              <Link href="/team" passHref>
+                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</a>
+              </Link>
+              <Link href="/blog" passHref>
+                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</a>
+              </Link>
+              <Link href="/sponsorship" passHref>
+                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</a>
+              </Link>
             </div>
             <div className="flex justify-end items-center">
               <button onClick={toggleTheme} style={{
