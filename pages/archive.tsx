@@ -128,16 +128,16 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="grid grid-cols-3 items-center">
                         <div className="flex items-center">
-                            <a href="/" style={{ color: 'var(--text-color)' }}>
+                            <link href="/" style={{ color: 'var(--text-color)' }}>
                                 <span className="font-bold">VHD</span>
-                            </a>
+                            </link>
                         </div>
                         <div className="flex justify-center md:flex md:space-x-2">
-                            <a href="/about" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</a>
-                            <a href="/events" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</a>
-                            <a href="/team" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</a>
-                            <a href="/blog" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</a>
-                            <a href="/sponsorship" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</a>
+                            <link href="/about" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</link>
+                            <link href="/events" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</link>
+                            <link href="/team" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</link>
+                            <link href="/blog" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</link>
+                            <link href="/sponsorship" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</link>
                         </div>
                         <div className="flex justify-end items-center">
                             <button onClick={toggleTheme} style={{
