@@ -23,7 +23,7 @@ const blogPosts: BlogPostProps[] = [
     {
         id: 1,
         title: "Consortium gathering number one went well.",
-        subtitle: "This is it yall. This post is something we're going to write about, so hang tight. There's plenty to write about here and we'lre going to go haaaaam on it! So ya dude let's do it. ",
+        subtitle: "This is it yall. This post is something we&#39;re going to write about, so hang tight. There&#39;s plenty to write about here and we&#39;lre going to go haaaaam on it! So ya dude let&#39;s do it. ",
         content: "This is the content for Blog Post 1. Here we share some interesting insights.",
         imgSrc: "/tree_iceberg.png",
         date: "Feb 2, 2023"
@@ -31,14 +31,14 @@ const blogPosts: BlogPostProps[] = [
     {
         id: 1,
         title: "Notes from the underground!",
-        subtitle: "This is it yall. This post is something we're going to write about, so hang tight. There's plenty to write about here and we'lre going to go haaaaam on it! So ya dude let's do it. ",
+        subtitle: "This is it yall. This post is something we&#39;re going to write about, so hang tight. There&#39;s plenty to write about here and we&#39;lre going to go haaaaam on it! So ya dude let&#39;s do it. ",
         content: "This is the content for Blog Post 1. Here we share some interesting insights.",
         imgSrc: "/wizard_AI_creator.png",
         date: "March 9, 2024"
     }, {
         id: 1,
-        title: "Let's make a real simulation of a full human ya'll!",
-        subtitle: "This is it yall. This post is something we're going to write about, so hang tight. There's plenty to write about here and we'lre going to go haaaaam on it! So ya dude let's do it. ",
+        title: "Let&#39;s make a real simulation of a full human ya&#39;ll!",
+        subtitle: "This is it yall. This post is something we&#39;re going to write about, so hang tight. There&#39;s plenty to write about here and we&#39;lre going to go haaaaam on it! So ya dude let&#39;s do it. ",
         content: "This is the content for Blog Post 1. Here we share some interesting insights.",
         imgSrc: "/neurons_background.png",
         date: "Jan 28, 2024"
@@ -90,7 +90,7 @@ interface ImageLinkProps {
     gridClass?: string; // Make gridClass optional as it might not always be provided
 }
 
-// Use the ImageLinkProps interface for the ImageLink component's props
+// Use the ImageLinkProps interface for the ImageLink component&#39;s props
 const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '' }) => (
     <li className={`flex-none ${gridClass} w-full sm:w-auto`}>
         <Link href={href} passHref>
