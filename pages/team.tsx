@@ -6,82 +6,6 @@ import AudioPlayer from 'react-h5-audio-player';
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-
-// Define a type for the blog post properties
-type BlogPostProps = {
-    id: number;
-    title: string;
-    subtitle: string;
-    content: string;
-    imgSrc: string;
-    date: string;
-};
-
-// Mock data for blog posts
-const blogPosts: BlogPostProps[] = [
-    {
-        id: 1,
-        title: "Consortium gathering number one went well.",
-        subtitle: "This is it yall. This post is something we're going to write about, so hang tight. There's plenty to write about here and we'lre going to go haaaaam on it! So ya dude let's do it. ",
-        content: "This is the content for Blog Post 1. Here we share some interesting insights.",
-        imgSrc: "/tree_iceberg.png",
-        date: "Feb 2, 2023"
-    },
-    {
-        id: 1,
-        title: "Notes from the underground!",
-        subtitle: "This is it yall. This post is something we're going to write about, so hang tight. There's plenty to write about here and we'lre going to go haaaaam on it! So ya dude let's do it. ",
-        content: "This is the content for Blog Post 1. Here we share some interesting insights.",
-        imgSrc: "/wizard_AI_creator.png",
-        date: "March 9, 2024"
-    }, {
-        id: 1,
-        title: "Let's make a real simulation of a full human ya'll!",
-        subtitle: "This is it yall. This post is something we're going to write about, so hang tight. There's plenty to write about here and we'lre going to go haaaaam on it! So ya dude let's do it. ",
-        content: "This is the content for Blog Post 1. Here we share some interesting insights.",
-        imgSrc: "/neurons_background.png",
-        date: "Jan 28, 2024"
-    },
-];
-
-// Inside your component or style definition
-const Accordion: React.FC<{ post: BlogPostProps }> = ({ post }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-        <div className="pb-20">
-            <div className="my-8 rounded-lg overflow-hidden shadow" style={{
-                backgroundColor: 'var(--entry-background-color)', // Assuming this variable is defined in your CSS for both themes
-                border: '0.1px solid var(--entry-border-color)', // You can define this variable in your CSS too
-                maxWidth: '95%',
-                margin: 'auto',
-                boxShadow: `0 4px 6px var(--entry-shadow-color), 0 1px 3px var(--entry-shadow-color)`,
-            }}>
-                <div className="cursor-pointer p-4" onClick={() => setIsOpen(!isOpen)}>
-                    <div className="flex items-start">
-                        <div className="flex-none" style={{ width: '250px', height: '250px' }}>
-                            <Image src={post.imgSrc} alt={post.title} width={300} height={300} layout="intrinsic" objectFit="cover" className="rounded-l-lg" />
-                        </div>
-                        <div className="flex-grow ml-4">
-                            <div style={{ color: 'var(--secondary-text-color)', fontSize: '8px', fontStyle: 'italic', marginBottom: '10px', alignSelf: 'flex-start' }}>{post.date}</div>
-                            <div className="flex flex-col justify-center pt-6" style={{ height: '100%' }}>
-                                <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '18px', lineHeight: '1.0', paddingBottom: '10px' }}>{post.title}</h3>
-                                <p style={{ color: 'var(--secondary-text-color)', fontSize: '12px', lineHeight: '1.2' }}>{post.subtitle}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {isOpen && <div className="p-4" style={{ color: 'var(--secondary-text-color)', fontSize: '12px', lineHeight: '1.2' }}>{post.content}</div>}
-            </div>
-        </div>
-    );
-};
-
-
-
-
-
 // Define an interface for the ImageLink props
 interface ImageLinkProps {
     href: string;
@@ -174,7 +98,7 @@ export default function Home() {
             <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
                 <div className="max-w-2xl mx-auto px-4">
                     <h1 className="text-4xl font-bold" style={{ color: 'var(--text-color)' }}>
-                        ARCHIVE
+                        TEAM
                     </h1>
                 </div>
             </header>
@@ -205,14 +129,6 @@ export default function Home() {
                     </div>
                     <Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" layout="intrinsic" />
                 </div>
-            </main>
-
-            <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 " style={{ width: '80%', margin: '0 auto' }}> {/* Adjust width and margin as needed */}
-                <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
-                    Entries</h2>
-                {blogPosts.map(post => (
-                    <Accordion key={post.id} post={post} />
-                ))}
             </main>
 
 

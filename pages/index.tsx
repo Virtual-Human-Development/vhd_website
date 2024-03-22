@@ -26,6 +26,14 @@ const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '
   </li>
 );
 
+const blogUpdates = [
+  { id: 1, imgSrc: "/blog-image-1.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
+  { id: 2, imgSrc: "/blog-image-2.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
+  { id: 3, imgSrc: "/blog-image-3.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
+  { id: 4, imgSrc: "/blog-image-4.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
+];
+
+
 export default function Home() {
   const [theme, setTheme] = useState('light');
 
@@ -52,18 +60,19 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
             <div className="flex items-center">
-              <a href="#" style={{ color: 'var(--text-color)' }}>
+              <a href="/" style={{ color: 'var(--text-color)' }}>
                 <span className="font-bold">VHD</span>
               </a>
             </div>
             <div className="flex justify-center md:flex md:space-x-2">
-              <a href="#" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</a>
-              <a href="#" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</a>
-              <a href="#" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</a>
-              <a href="#" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</a>
+              <a href="/about" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</a>
+              <a href="/events" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</a>
+              <a href="/team" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</a>
+              <a href="/blog" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</a>
+              <a href="/sponsorship" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</a>
             </div>
             <div className="flex justify-end items-center">
-            <button onClick={toggleTheme} style={{
+              <button onClick={toggleTheme} style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -86,7 +95,7 @@ export default function Home() {
                   left: theme === 'light' ? '5px' : '22px', // Start 5px from the left edge for the light theme
                   transition: 'left 0.3s ease'
                 }}></span>
-            </button>
+              </button>
               <a href="#" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Login</a>
             </div>
           </div>
@@ -120,10 +129,10 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-              The next generation of human developmental models. 
+              The next generation of human developmental models.
             </h2>
             <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-              Leveraging a high-impact community with decades of modeling experience. 
+              Leveraging a high-impact community with decades of modeling experience.
             </p>
           </div>
           <Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" layout="intrinsic" />
@@ -131,28 +140,46 @@ export default function Home() {
       </main>
 
 
-      <footer className="shadow w-full" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
+      <main className="py-12" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>Latest Updates</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+            {blogUpdates.map((update) => (
+              <div key={update.id} className="rounded-lg overflow-hidden shadow-lg" style={{ backgroundColor: 'var(--background-color)' }}>
+                <Image src={update.imgSrc} alt={update.title} width={400} height={250} className="w-full h-auto" layout="responsive" />
+                <div className="p-4">
+                  <h3 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>{update.title}</h3>
+                  <p className="text-sm" style={{ color: 'var(--secondary-text-color)' }}>{update.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+
+
+      <footer className="pt-40 shadow w-full" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
             {/* Social Media Links */}
             <Link href="https://twitter.com/virtualhumandevelopment" passHref>
               <div className="cursor-pointer">
-                <Image src="/icons/twitter.png" alt="Twitter" width={24} height={24} />
+                <Image src={theme === 'light' ? "/icons/twitter-w.png" : "/icons/twitter-b.png"} alt="Twitter" width={24} height={24} />
               </div>
             </Link>
             <Link href="https://www.linkedin.com/company/virtual-human-development/" passHref>
               <div className="cursor-pointer">
-                <Image src="/icons/linkedin.png" alt="LinkedIn" width={24} height={24} />
+                <Image src={theme === 'light' ? "/icons/linkedin-w.png" : "/icons/linkedin-b.png"} alt="LinkedIn" width={24} height={24} />
               </div>
             </Link>
             <Link href="https://www.instagram.com/virtualhumandevelopment/" passHref>
               <div className="cursor-pointer">
-                <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} />
+                <Image src={theme === 'light' ? "/icons/instagram-w.png" : "/icons/instagram-b.png"} alt="Instagram" width={24} height={24} />
               </div>
             </Link>
             <Link href="mailto:vhdconsortium@gmail.com" passHref>
               <div className="cursor-pointer">
-                <Image src="/icons/email.png" alt="Email" width={24} height={24} />
+                <Image src={theme === 'light' ? "/icons/email-w.png" : "/icons/email-b.png"} alt="Email" width={24} height={24} />
               </div>
             </Link>
           </div>
@@ -161,7 +188,7 @@ export default function Home() {
             <p className="text-sm " style={{ color: 'var(--secondary-text-color)' }}>Copyright © 2024 Virtual Human Development</p>
           </div>
         </div>
-      </footer>
+      </footer >
 
     </div >
   )
