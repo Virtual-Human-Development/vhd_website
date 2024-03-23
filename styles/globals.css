@@ -55,9 +55,9 @@ body {
 /* Dark theme */
 :root {
   --background-color: #0e0e0e;
-  --entry-background-color: #111111;
-  --entry-border-color: #171717;
-  --entry-shadow-color: rgba(79, 79, 79, 0.19);
+  --entry-background-color: #171717e8;
+  --entry-border-color: #232323;
+  --entry-shadow-color: rgba(97, 97, 97, 0.221);
   --text-color: #f0f0f0;
   --secondary-text-color: #898989;
   --small-font-size: 14px;
@@ -109,40 +109,49 @@ body {
 
 /* Middle line (use the span itself) */
 .menu-button span {
-  background: var(--text-color); /* Make the middle line visible */
-  transform: rotate(0deg); /* Ensure it starts without rotation */
+  background: var(--text-color);
+  /* Make the middle line visible */
+  transform: rotate(0deg);
+  /* Ensure it starts without rotation */
   transform: translateX(6px);
 }
 
 .menu-button span::before {
-  top: -8px; /* Adjust to match your design */
+  top: -8px;
+  /* Adjust to match your design */
   transform: translateX(-22px);
 }
 
 .menu-button span::after {
-  top: 8px; /* Adjust to match your design */
+  top: 8px;
+  /* Adjust to match your design */
   transform: translateX(-14px);
 }
 
 .menu-button.open span {
   /* Make the middle line disappear or transform */
-  opacity: 0; /* Option 1: Fade out the middle line */
+  opacity: 0;
+  /* Option 1: Fade out the middle line */
   /* transform: scale(0); Option 2: Shrink away the middle line */
 }
 
 .menu-button.open span::before,
 .menu-button.open span::after {
-  top: 0; /* Move both lines to the middle */
+  top: 0;
+  /* Move both lines to the middle */
 }
 
 .menu-button.open span {
-  transform: rotate(-75deg); /* Bottom line rotates to form the other half of the "X" */
+  transform: rotate(-75deg);
+  /* Bottom line rotates to form the other half of the "X" */
 }
 
 .menu-button.open span::before {
-  transform: rotate(75deg); /* Top line rotates to form one half of the "X" */
+  transform: rotate(75deg);
+  /* Top line rotates to form one half of the "X" */
 }
 
 .menu-button.open span::after {
-  transform: rotate(-20deg); /* Bottom line rotates to form the other half of the "X" */
+  transform: rotate(-20deg);
+  /* Bottom line rotates to form the other half of the "X" */
 }

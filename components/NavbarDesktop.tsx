@@ -7,16 +7,20 @@ const NavbarDesktop = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <nav className="shadow" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
-          <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            
-            {/* Common Brand/Logo Section */}
+        <nav className="shadow" style={{
+            backgroundColor: 'var(--entry-background-color)',
+            color: 'var(--text-color)',
+            boxShadow: `0 2px 4px var(--entry-shadow-color), 0 2px 4px var(--entry-shadow-color)` // Applied shadow
+        }}>
+            <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
+
+                {/* Common Brand/Logo Section */}
                 <div className="flex items-center">
                     <Link href="/" style={{ color: 'var(--text-color)' }} className="font-bold text-2xl">VHD
                     </Link>
                 </div>
-            
-            {/* DESKTOP Navigation Links */}
+
+                {/* DESKTOP Navigation Links */}
                 <div className="flex-grow">
                     <div className="flex justify-center space-x-4">
                         <Link href="/about" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</Link>
@@ -25,22 +29,22 @@ const NavbarDesktop = () => {
                         <Link href="/blog" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</Link>
                         <Link href="/sponsorship" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</Link>
                     </div>
-                </div> 
+                </div>
 
                 <div className="flex items-center space-x-4">
                     <button onClick={toggleTheme} style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '40px',
-                            height: '20px',
-                            backgroundColor: theme === 'light' ? '#f0f0f0' : '#333',
-                            borderRadius: '25px',
-                            border: 'none',
-                            cursor: 'pointer',
-                            position: 'relative',
-                            transition: 'background-color 0.3s ease'
-                        }}>
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '40px',
+                        height: '20px',
+                        backgroundColor: theme === 'light' ? '#f0f0f0' : '#333',
+                        borderRadius: '25px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        position: 'relative',
+                        transition: 'background-color 0.3s ease'
+                    }}>
                         <span style={{
                             display: 'block',
                             width: '12px',
@@ -51,11 +55,11 @@ const NavbarDesktop = () => {
                             left: theme === 'light' ? '5px' : '22px',
                             transition: 'left 0.3s ease'
                         }}></span>
-                    </button>   
+                    </button>
 
                     <Link href="/login" className="py-2 px-3" style={{ color: 'var(--text-color)' }}>Login</Link>
                 </div>
-          </div>
+            </div>
         </nav>
     );
 };

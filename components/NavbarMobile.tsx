@@ -8,27 +8,33 @@ const NavbarMobile = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
-        <nav className="shadow py-3 pl-5 pr-9" style={{ backgroundColor: 'var(--entry-background-color)', color: 'var(--text-color)' }}>
+        <nav
+            className="shadow py-3 pl-5 pr-9"
+            style={{
+                backgroundColor: 'var(--entry-background-color)',
+                color: 'var(--text-color)',
+                boxShadow: `0 2px 4px var(--entry-shadow-color), 0 2px 4px var(--entry-shadow-color)`
+            }}>
             <div className="max-w-6xl mx-auto flex justify-between items-center h-16">
 
-                <Link href="/" className="font-bold text-lg" style={{ color: 'var(--text-color)' }}>
+                <Link href="/" className="font-bold text-2xl" style={{ color: 'var(--text-color)' }}>
                     VHD
                 </Link>
 
                 <div className="flex items-center space-x-4">
                     <button onClick={toggleTheme} style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '40px',
-                            height: '20px',
-                            backgroundColor: theme === 'light' ? '#f0f0f0' : '#333',
-                            borderRadius: '25px',
-                            border: 'none',
-                            cursor: 'pointer',
-                            position: 'relative',
-                            transition: 'background-color 0.3s ease'
-                        }}>
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '40px',
+                        height: '20px',
+                        backgroundColor: theme === 'light' ? '#f0f0f0' : '#333',
+                        borderRadius: '25px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        position: 'relative',
+                        transition: 'background-color 0.3s ease'
+                    }}>
                         <span style={{
                             display: 'block',
                             width: '12px',
@@ -59,7 +65,7 @@ const NavbarMobile = () => {
                         <Link href="/sponsorship"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Sponsorship</span></Link>
                         <Link href="/login"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Login</span></Link>
 
-                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

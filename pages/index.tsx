@@ -4,34 +4,16 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ImageLink from '../components/ImageLink'; // Import the ImageLink component
 import { useTheme } from '../context/ThemeContext';
+import { blogPosts, BlogPost } from '../data/blogPosts'; // Adjust the import path as necessary
 
-
-// Define an interface for the ImageLink props
-interface ImageLinkProps {
-  href: string;
-  imgSrc: string;
-  text: string;
-  gridClass?: string;
-}
-
-// Use the ImageLinkProps interface for the ImageLink component's props
-const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '' }) => (
-  <li className={`flex-none ${gridClass} w-full sm:w-auto`}>
-    <Link href={href}>
-      <div className="block">
-        <Image src={imgSrc} alt={text} width={500} height={300} className="rounded-lg"/>
-        <span className="block text-center mt-2">{text}</span>
-      </div>
-    </Link>
-  </li>
-);
 
 
 export default function Home() {
   const { theme } = useTheme(); // Using theme from ThemeContext
 
-  return  (
+  return (
     <div className="flex flex-col min-h-screen" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
       <Head>
         <title>VHD Website</title>
@@ -58,7 +40,7 @@ export default function Home() {
               Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
             </p>
           </div>
-          <Image src="/vhd_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
+          <Image src="/vhd_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
         </div>
       </main>
 
@@ -72,7 +54,7 @@ export default function Home() {
               Leveraging a high-impact community with decades of modeling experience.
             </p>
           </div>
-          <Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
+          <Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
         </div>
       </main>
 
@@ -81,13 +63,15 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>Latest Updates</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-            {blogUpdates.map((update) => (
-              <div key={update.id} className="rounded-lg overflow-hidden shadow-lg" style={{ backgroundColor: 'var(--background-color)' }}>
-                <Image src={update.imgSrc} alt={update.title} width={400} height={250} className="w-full h-auto"/>
-                <div className="p-4">
-                  <h3 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>{update.title}</h3>
-                  <p className="text-sm" style={{ color: 'var(--secondary-text-color)' }}>{update.subtitle}</p>
-                </div>
+            {blogPosts.slice(0, 4).map((post) => ( // Only show the first 4 posts or however many you prefer
+              <div key={post.id} className="rounded-lg overflow-hidden shadow-lg" style={{ backgroundColor: 'var(--background-color)' }}>
+                <Link href={`/blog`} passHref>
+                  <Image src={post.imgSrc} alt={post.title} width={400} height={250} className="w-full h-auto" layout="responsive" />
+                  <div className="p-4">
+                    <h3 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>{post.title}</h3>
+                    <p className="text-sm" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -101,10 +85,3 @@ export default function Home() {
   )
 }
 
-
-const blogUpdates = [
-  { id: 1, imgSrc: "/wizard_AI_creator.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
-  { id: 2, imgSrc: "/wizard_AI_work.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
-  { id: 3, imgSrc: "/tree_iceberg.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
-  { id: 4, imgSrc: "/bio_eng_img.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
-];
