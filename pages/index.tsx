@@ -27,13 +27,6 @@ const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '
   </li>
 );
 
-const blogUpdates = [
-  { id: 1, imgSrc: "/wizard_AI_creator.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
-  { id: 2, imgSrc: "/wizard_AI_work.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
-  { id: 3, imgSrc: "/tree_iceberg.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
-  { id: 4, imgSrc: "/bio_eng_img.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
-];
-
 
 export default function Home() {
   const { theme } = useTheme(); // Using theme from ThemeContext
@@ -65,7 +58,7 @@ export default function Home() {
               Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
             </p>
           </div>
-          <Image src="/VHD_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
+          <Image src="/vhd_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
         </div>
       </main>
 
@@ -107,3 +100,11 @@ export default function Home() {
     </div >
   )
 }
+
+
+const blogUpdates = [
+  { id: 1, imgSrc: "/wizard_AI_creator.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
+  { id: 2, imgSrc: "/wizard_AI_work.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
+  { id: 3, imgSrc: "/tree_iceberg.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
+  { id: 4, imgSrc: "/bio_eng_img.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
+];

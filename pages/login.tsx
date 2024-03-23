@@ -66,7 +66,7 @@ export default function Home() {
                             Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
                         </p>
                     </div>
-                    <Image src="/VHD_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
+                    <Image src="/bio_eng_img.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
                 </div>
             </main>
 
