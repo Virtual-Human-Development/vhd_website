@@ -1,6 +1,6 @@
 // metadata.ts
 
 export const metadata = {
-    title: "Steven's Website",
-    description: "Personal website ya'll!",
+    title: "VHD Website",
+    description: "Website of the Virtual Human Development Consortium",
 };

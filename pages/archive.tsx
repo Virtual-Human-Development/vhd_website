@@ -61,7 +61,7 @@ const Accordion: React.FC<{ post: BlogPostProps }> = ({ post }) => {
                 <div className="cursor-pointer p-4" onClick={() => setIsOpen(!isOpen)}>
                     <div className="flex items-start">
                         <div className="flex-none" style={{ width: '250px', height: '250px' }}>
-                            <Image src={post.imgSrc} alt={post.title} width={300} height={300} layout="intrinsic" objectFit="cover" className="rounded-l-lg" />
+                            <Image src={post.imgSrc} alt={post.title} width={300} height={300} objectFit="cover" className="rounded-l-lg" />
                         </div>
                         <div className="flex-grow ml-4">
                             <div style={{ color: 'var(--secondary-text-color)', fontSize: '8px', fontStyle: 'italic', marginBottom: '10px', alignSelf: 'flex-start' }}>{post.date}</div>
@@ -95,7 +95,7 @@ const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '
     <li className={`flex-none ${gridClass} w-full sm:w-auto`}>
         <Link href={href} passHref>
             <div className="block">
-                <Image src={imgSrc} alt={text} width={500} height={300} className="rounded-lg" layout="responsive" />
+                <Image src={imgSrc} alt={text} width={500} height={300} className="rounded-lg"/>
                 <span className="block text-center mt-2">{text}</span>
             </div>
         </Link>
@@ -121,32 +121,30 @@ export default function Home() {
             <Head>
                 <title>VHD Website</title>
                 <meta name="description" content="VHD Website" />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <nav className="shadow" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="grid grid-cols-3 items-center">
-                        <div className="flex items-center">
-                            <Link href="/" passHref>
-                                <a style={{ color: 'var(--text-color)' }}><span className="font-bold">VHD</span></a>
+                    <div className="flex items-center">
+                            <Link href="/" passHref style={{ color: 'var(--text-color)' }}><span className="font-bold">VHD</span>
                             </Link>
                         </div>
                         <div className="flex justify-center md:flex md:space-x-2">
-                            <Link href="/about" passHref>
-                                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</a>
+                            <Link href="/about" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                About
                             </Link>
-                            <Link href="/events" passHref>
-                                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</a>
+                            <Link href="/events" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Events 
                             </Link>
-                            <Link href="/team" passHref>
-                                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</a>
+                            <Link href="/team" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Team
                             </Link>
-                            <Link href="/blog" passHref>
-                                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</a>
+                            <Link href="/blog" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Blog
                             </Link>
-                            <Link href="/sponsorship" passHref>
-                                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</a>
+                            <Link href="/sponsorship" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Sponsorship
                             </Link>
                         </div>
                         <div className="flex justify-end items-center">
@@ -199,7 +197,7 @@ export default function Home() {
                             Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
                         </p>
                     </div>
-                    <Image src="/VHD_banner_1.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" layout="intrinsic" />
+                    <Image src="/VHD_banner_1.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
                 </div>
             </main>
 
@@ -213,7 +211,7 @@ export default function Home() {
                             Leveraging a high-impact community with decades of modeling experience.
                         </p>
                     </div>
-                    <Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" layout="intrinsic" />
+                    <Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
                 </div>
             </main>
 

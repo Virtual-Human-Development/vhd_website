@@ -19,7 +19,7 @@ const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '
   <li className={`flex-none ${gridClass} w-full sm:w-auto`}>
     <Link href={href} passHref>
       <div className="block">
-        <Image src={imgSrc} alt={text} width={500} height={300} className="rounded-lg" layout="responsive" />
+        <Image src={imgSrc} alt={text} width={500} height={300} className="rounded-lg"/>
         <span className="block text-center mt-2">{text}</span>
       </div>
     </Link>
@@ -27,10 +27,10 @@ const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '
 );
 
 const blogUpdates = [
-  { id: 1, imgSrc: "/blog-image-1.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
-  { id: 2, imgSrc: "/blog-image-2.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
-  { id: 3, imgSrc: "/blog-image-3.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
-  { id: 4, imgSrc: "/blog-image-4.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
+  { id: 1, imgSrc: "/wizard_AI_creator.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
+  { id: 2, imgSrc: "/wizard_AI_work.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
+  { id: 3, imgSrc: "/tree_iceberg.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
+  { id: 4, imgSrc: "/bio_eng_img.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
 ];
 
 
@@ -53,34 +53,32 @@ export default function Home() {
       <Head>
         <title>VHD Website</title>
         <meta name="description" content="VHD Website" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <nav className="shadow" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
-            <div className="flex items-center">
-              <Link href="/" passHref>
-                <a style={{ color: 'var(--text-color)' }}><span className="font-bold">VHD</span></a>
-              </Link>
-            </div>
-            <div className="flex justify-center md:flex md:space-x-2">
-              <Link href="/about" passHref>
-                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>About</a>
-              </Link>
-              <Link href="/events" passHref>
-                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Events</a>
-              </Link>
-              <Link href="/team" passHref>
-                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</a>
-              </Link>
-              <Link href="/blog" passHref>
-                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</a>
-              </Link>
-              <Link href="/sponsorship" passHref>
-                <a className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</a>
-              </Link>
-            </div>
+          <div className="flex items-center">
+                            <Link href="/" passHref style={{ color: 'var(--text-color)' }}><span className="font-bold">VHD</span>
+                            </Link>
+                        </div>
+                        <div className="flex justify-center md:flex md:space-x-2">
+                            <Link href="/about" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                About
+                            </Link>
+                            <Link href="/events" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Events 
+                            </Link>
+                            <Link href="/team" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Team
+                            </Link>
+                            <Link href="/blog" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Blog
+                            </Link>
+                            <Link href="/sponsorship" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
+                                Sponsorship
+                            </Link>
+                        </div>
             <div className="flex justify-end items-center">
               <button onClick={toggleTheme} style={{
                 display: 'inline-flex',
@@ -131,7 +129,7 @@ export default function Home() {
               Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
             </p>
           </div>
-          <Image src="/VHD_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" layout="intrinsic" />
+          <Image src="/VHD_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
         </div>
       </main>
 
@@ -145,7 +143,7 @@ export default function Home() {
               Leveraging a high-impact community with decades of modeling experience.
             </p>
           </div>
-          <Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" layout="intrinsic" />
+          <Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
         </div>
       </main>
 
@@ -156,7 +154,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
             {blogUpdates.map((update) => (
               <div key={update.id} className="rounded-lg overflow-hidden shadow-lg" style={{ backgroundColor: 'var(--background-color)' }}>
-                <Image src={update.imgSrc} alt={update.title} width={400} height={250} className="w-full h-auto" layout="responsive" />
+                <Image src={update.imgSrc} alt={update.title} width={400} height={250} className="w-full h-auto"/>
                 <div className="p-4">
                   <h3 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>{update.title}</h3>
                   <p className="text-sm" style={{ color: 'var(--secondary-text-color)' }}>{update.subtitle}</p>

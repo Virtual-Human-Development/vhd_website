@@ -1,13 +1,6 @@
-# Steven's Personal Website. 
+# Virtual Human Development Main Website 
 
-No instructions to follow ya&#39;ll! Just enjoy it. 
+Nothing much to see here yet, but as we build we'll integrate
+more features for data sharing, model execution, and simulation building. 
 
-I MAY have some javascript on here sometime soon that you can deploy yourself. 
-Ideally that will be simulation code for: 
-
-- Origins of Life
-- Embryogenesis
-
-And eventually
-
-- LLMs for genomics 
+The idea is to create a collection of the best mathematical models executable. 
