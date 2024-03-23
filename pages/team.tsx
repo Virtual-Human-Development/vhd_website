@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import 'react-h5-audio-player/lib/styles.css'; // Import stylesheet
-import AudioPlayer from 'react-h5-audio-player';
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 
 // Define an interface for the ImageLink props
 interface ImageLinkProps {
@@ -47,60 +47,7 @@ export default function Home() {
                 <meta name="description" content="VHD Website" />
             </Head>
 
-            <nav className="shadow" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
-                <div className="max-w-6xl mx-auto px-4">
-                    <div className="grid grid-cols-3 items-center">
-                    <div className="flex items-center">
-                            <Link href="/" passHref style={{ color: 'var(--text-color)' }}><span className="font-bold">VHD</span>
-                            </Link>
-                        </div>
-                        <div className="flex justify-center md:flex md:space-x-2">
-                            <Link href="/about" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
-                                About
-                            </Link>
-                            <Link href="/events" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
-                                Events 
-                            </Link>
-                            <Link href="/team" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
-                                Team
-                            </Link>
-                            <Link href="/blog" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
-                                Blog
-                            </Link>
-                            <Link href="/sponsorship" passHref className="py-5 px-3" style={{ color: 'var(--text-color)' }}>
-                                Sponsorship
-                            </Link>
-                        </div>
-                        <div className="flex justify-end items-center">
-                            <button onClick={toggleTheme} style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                width: '40px', // Slightly larger for better usability
-                                height: '20px',
-                                backgroundColor: theme === 'light' ? '#f0f0f0' : '#333',
-                                borderRadius: '25px', // Half the height for a perfect circle on the ends
-                                border: 'none',
-                                cursor: 'pointer',
-                                position: 'relative',
-                                transition: 'background-color 0.3s ease'
-                            }}>
-                                <span style={{
-                                    display: 'block',
-                                    width: '12px', // A larger dot for better visibility
-                                    height: '12px',
-                                    backgroundColor: theme === 'light' ? '#333' : '#f0f0f0', // Keep the color change for visual feedback
-                                    borderRadius: '50%',
-                                    position: 'absolute',
-                                    left: theme === 'light' ? '5px' : '22px', // Start 5px from the left edge for the light theme
-                                    transition: 'left 0.3s ease'
-                                }}></span>
-                            </button>
-                            <a href="#" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Login</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            <Navbar theme={theme} toggleTheme={toggleTheme} />
 
 
             <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
@@ -140,37 +87,7 @@ export default function Home() {
             </main>
 
 
-            <footer className="pt-40 shadow w-full" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
-                <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-                    <div className="flex items-center space-x-4">
-                        {/* Social Media Links */}
-                        <Link href="https://twitter.com/virtualhumandevelopment" passHref>
-                            <div className="cursor-pointer">
-                                <Image src={theme === 'light' ? "/icons/twitter-w.png" : "/icons/twitter-b.png"} alt="Twitter" width={24} height={24} />
-                            </div>
-                        </Link>
-                        <Link href="https://www.linkedin.com/company/virtual-human-development/" passHref>
-                            <div className="cursor-pointer">
-                                <Image src={theme === 'light' ? "/icons/linkedin-w.png" : "/icons/linkedin-b.png"} alt="LinkedIn" width={24} height={24} />
-                            </div>
-                        </Link>
-                        <Link href="https://www.instagram.com/virtualhumandevelopment/" passHref>
-                            <div className="cursor-pointer">
-                                <Image src={theme === 'light' ? "/icons/instagram-w.png" : "/icons/instagram-b.png"} alt="Instagram" width={24} height={24} />
-                            </div>
-                        </Link>
-                        <Link href="mailto:vhdconsortium@gmail.com" passHref>
-                            <div className="cursor-pointer">
-                                <Image src={theme === 'light' ? "/icons/email-w.png" : "/icons/email-b.png"} alt="Email" width={24} height={24} />
-                            </div>
-                        </Link>
-                    </div>
-                    <div>
-                        {/* Copyright Statement */}
-                        <p className="text-sm " style={{ color: 'var(--secondary-text-color)' }}>Copyright © 2024 Virtual Human Development</p>
-                    </div>
-                </div>
-            </footer >
+            <Footer theme={theme} />
 
         </div >
     )
