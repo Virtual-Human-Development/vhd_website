@@ -78,3 +78,71 @@ body {
 .header-content h1 {
   color: var(--text-color);
 }
+
+
+
+.menu-button {
+  width: 35px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.7s ease-in-out;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-button span,
+.menu-button span::before,
+.menu-button span::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: var(--text-color);
+  border-radius: 3px;
+  transition: 0.25s ease-in-out;
+}
+
+/* Middle line (use the span itself) */
+.menu-button span {
+  background: var(--text-color); /* Make the middle line visible */
+  transform: rotate(0deg); /* Ensure it starts without rotation */
+  transform: translateX(6px);
+}
+
+.menu-button span::before {
+  top: -8px; /* Adjust to match your design */
+  transform: translateX(-22px);
+}
+
+.menu-button span::after {
+  top: 8px; /* Adjust to match your design */
+  transform: translateX(-14px);
+}
+
+.menu-button.open span {
+  /* Make the middle line disappear or transform */
+  opacity: 0; /* Option 1: Fade out the middle line */
+  /* transform: scale(0); Option 2: Shrink away the middle line */
+}
+
+.menu-button.open span::before,
+.menu-button.open span::after {
+  top: 0; /* Move both lines to the middle */
+}
+
+.menu-button.open span {
+  transform: rotate(-75deg); /* Bottom line rotates to form the other half of the "X" */
+}
+
+.menu-button.open span::before {
+  transform: rotate(75deg); /* Top line rotates to form one half of the "X" */
+}
+
+.menu-button.open span::after {
+  transform: rotate(-20deg); /* Bottom line rotates to form the other half of the "X" */
+}
