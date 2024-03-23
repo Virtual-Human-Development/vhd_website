@@ -4,50 +4,48 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useTheme } from '../context/ThemeContext';
 
 
 // Define an interface for the ImageLink props
 interface ImageLinkProps {
-    href: string;
-    imgSrc: string;
-    text: string;
-    gridClass?: string; // Make gridClass optional as it might not always be provided
+  href: string;
+  imgSrc: string;
+  text: string;
+  gridClass?: string;
 }
 
 // Use the ImageLinkProps interface for the ImageLink component's props
 const ImageLink: React.FC<ImageLinkProps> = ({ href, imgSrc, text, gridClass = '' }) => (
-    <li className={`flex-none ${gridClass} w-full sm:w-auto`}>
-        <Link href={href} passHref>
-            <div className="block">
-                <Image src={imgSrc} alt={text} width={500} height={300} className="rounded-lg"/>
-                <span className="block text-center mt-2">{text}</span>
-            </div>
-        </Link>
-    </li>
+  <li className={`flex-none ${gridClass} w-full sm:w-auto`}>
+    <Link href={href}>
+      <div className="block">
+        <Image src={imgSrc} alt={text} width={500} height={300} className="rounded-lg"/>
+        <span className="block text-center mt-2">{text}</span>
+      </div>
+    </Link>
+  </li>
 );
 
+const blogUpdates = [
+  { id: 1, imgSrc: "/wizard_AI_creator.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
+  { id: 2, imgSrc: "/wizard_AI_work.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
+  { id: 3, imgSrc: "/tree_iceberg.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
+  { id: 4, imgSrc: "/bio_eng_img.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
+];
+
+
 export default function Home() {
-    const [theme, setTheme] = useState('light');
-
-    useEffect(() => {
-        document.body.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme); // Persist theme preference
-    }, [theme]);
-
-    // Toggle theme function
-    const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-    };
-
+    const { theme } = useTheme(); // Using theme from ThemeContext
+  
     return (
-        <div className="flex flex-col min-h-screen bg-gray-200" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
-
-            <Head>
-                <title>VHD Website</title>
+    <div className="flex flex-col min-h-screen" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
+      <Head>
+        <title>VHD Website</title>
                 <meta name="description" content="VHD Website" />
             </Head>
 
-            <Navbar theme={theme} toggleTheme={toggleTheme} />
+            <Navbar />
 
 
             <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
@@ -87,7 +85,7 @@ export default function Home() {
             </main>
 
 
-            <Footer theme={theme} />
+            <Footer />
 
         </div >
     )
