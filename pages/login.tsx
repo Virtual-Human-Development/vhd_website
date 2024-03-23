@@ -52,7 +52,7 @@ export default function Home() {
             <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
                 <div className="max-w-2xl mx-auto px-4">
                     <h1 className="text-4xl font-bold" style={{ color: 'var(--text-color)' }}>
-                        SPONSORSHIP
+                        MEMBER AREA
                     </h1>
                 </div>
             </header>

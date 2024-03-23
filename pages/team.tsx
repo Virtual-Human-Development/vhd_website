@@ -68,7 +68,7 @@ export default function Home() {
                             Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
                         </p>
                     </div>
-                    <Image src="/VHD_banner_1.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
+                    <Image src="/VHD_banner_1.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
                 </div>
             </main>
 
@@ -82,7 +82,7 @@ export default function Home() {
                             Leveraging a high-impact community with decades of modeling experience.
                         </p>
                     </div>
-                    <Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
+                    <Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg"/>
                 </div>
             </main>
 
