@@ -7,3 +7,14 @@ export type BlogPostProps = {
     imgSrc: string;
     date: string;
 };
+
+
+// types.ts
+export type MemberListProps = {
+    id: number;
+    title: string;
+    subtitle: string;
+    bio: string;
+    imgSrc: string;
+    datejoined: string;
+};

@@ -4,8 +4,11 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useTheme } from '../context/ThemeContext';
 import ImageLink from '../components/ImageLink'; // Import the ImageLink component
+import { useTheme } from '../context/ThemeContext';
+
+import Accordion from '../components/AccordionTeam';
+import { memberList } from '../data/memberList';
 
 
 
@@ -35,28 +38,37 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            Join our community and make a difference.
+                            The Virtual Human Development Consortium.
                         </h2>
                         <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
+                            Co-founded by Drs. Maria Abou Chakra, Nozomu Yachie, and Nika Shakiba, who act as the Founding Directors of the consortium. Under their leadership, the consortium now consists of over 40 world leading scientists and their teams, bridging experimentalists and theoreticians. The consortium strategically intersects experts and technologies from divergent disciplines to drive robust experiment-to-theory research cycles. The consortium leverages expertise in stem cells and developmental biology, stem cell bioengineering, synthetic biology, systems biology, evolutionary biology, bioinformatics, machine learning, mathematical biology. We are also actively recruiting in the area of bioethics.
                         </p>
                     </div>
-                    <Image src="/wizard_AI_creator.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
+                    <Image src="/consortium.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                 </div>
             </main>
 
+
             <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            The next generation of human developmental models.
+                            Here then, the full list of members!
                         </h2>
                         <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Leveraging a high-impact community with decades of modeling experience.
+                            Starting with the advisory board:
                         </p>
                     </div>
-                    <Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                 </div>
+            </main>
+
+
+            <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 " style={{ width: '80%', margin: '0 auto' }}> {/* Adjust width and margin as needed */}
+                <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
+                    Entries</h2>
+                {memberList.map(post => (
+                    <Accordion key={post.id} post={post} />
+                ))}
             </main>
 
 

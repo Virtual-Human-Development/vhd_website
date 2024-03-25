@@ -4,9 +4,10 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Accordion from '../components/Accordion';
 import ImageLink from '../components/ImageLink'; // Import the ImageLink component
 import { useTheme } from '../context/ThemeContext';
+
+import Accordion from '../components/AccordionBlog';
 import { blogPosts } from '../data/blogPosts'; // Import the shared blogPosts data
 
 
