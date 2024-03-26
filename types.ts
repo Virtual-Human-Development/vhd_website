@@ -13,8 +13,8 @@ export type BlogPostProps = {
 export type MemberListProps = {
     id: number;
     title: string;
-    subtitle: string;
-    bio: string;
+    // subtitle: string;
+    // bio: string;
     imgSrc: string;
     affiliation: string;
 };

@@ -20,8 +20,8 @@ const MobileAccordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
                     <div className="flex-grow p-4 text-center">
                         <div className="text-sm mb-2" style={{ color: 'var(--secondary-text-color)' }}>{post.affiliation}</div>
                         <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.25rem' }}>{post.title}</h3>
-                        <h2 className="mt-2" style={{ color: 'var(--text-color)' }}>{post.subtitle}</h2>
-                        <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.bio}</p>
+                        {/*  <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p> */}
+                        {/* <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.bio}</p> */}
                     </div>
                 </div>
             </div>
