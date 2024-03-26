@@ -33,7 +33,7 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
                         <Image src={post.imgSrc} alt={post.title} width={300} height={300} objectFit="cover" className={`rounded-t-lg ${isMobile ? '' : 'rounded-l-lg'}`} layout="responsive" />
                     </div>
                     <div className="flex-grow p-4">
-                        <div className={`text-sm ${isMobile ? 'mb-2' : 'mb-4'}`} style={{ color: 'var(--secondary-text-color)' }}>{post.date}</div>
+                        <div className={`text-sm ${isMobile ? 'mb-2' : 'mb-4'}`} style={{ color: 'var(--secondary-text-color)' }}>{post.datejoined}</div>
                         <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.25rem' }}>{post.title}</h3>
                         <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p>
                     </div>
