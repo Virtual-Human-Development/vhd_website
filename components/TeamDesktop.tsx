@@ -28,19 +28,18 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
                 margin: 'auto',
                 boxShadow: `0 2px 4px var(--entry-shadow-color), 0 2px 4px var(--entry-shadow-color)`,
             }}>
-                <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} items-start`}>
-                    <div className={`flex-none ${isMobile ? 'w-full' : 'w-64'} ${isMobile ? 'h-48' : 'h-64'}`} style={{ overflow: 'hidden' }}>
-                        <Image src={post.imgSrc} alt={post.title} width={300} height={300} objectFit="cover" className={`rounded-t-lg ${isMobile ? '' : 'rounded-l-lg'}`} layout="responsive" />
+                {/* Adjusted to always use flex-col for a consistent layout */}
+                <div className="flex flex-col items-start">
+                    <div className="w-full" style={{ overflow: 'hidden' }}>
+                        <Image src={post.imgSrc} alt={post.title} width={300} height={300} className="rounded-t-lg" />
                     </div>
                     <div className="flex-grow p-4">
-                        <div className={`text-sm ${isMobile ? 'mb-2' : 'mb-4'}`} style={{ color: 'var(--secondary-text-color)' }}>{post.datejoined}</div>
+                        <div className="text-sm mb-2" style={{ color: 'var(--secondary-text-color)' }}>{post.affiliation}</div>
                         <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.25rem' }}>{post.title}</h3>
                         <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p>
+                        <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.bio}</p>
                     </div>
                 </div>
-                {isOpen && (
-                    <div className="p-4" style={{ color: 'var(--secondary-text-color)' }}>{post.bio}</div>
-                )}
             </div>
         </div>
     );

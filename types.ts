@@ -16,5 +16,5 @@ export type MemberListProps = {
     subtitle: string;
     bio: string;
     imgSrc: string;
-    datejoined: string;
+    affiliation: string;
 };

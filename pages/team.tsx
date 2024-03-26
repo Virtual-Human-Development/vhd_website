@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import ImageLink from '../components/ImageLink'; // Import the ImageLink component
 import { useTheme } from '../context/ThemeContext';
 
-import Accordion from '../components/AccordionTeam';
+import Team from '../components/Team';
 import { memberList } from '../data/memberList';
 
 
@@ -49,26 +49,13 @@ export default function Home() {
             </main>
 
 
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            Here then, the full list of members!
-                        </h2>
-                        <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Starting with the advisory board:
-                        </p>
-                    </div>
-                </div>
-            </main>
 
-
-            <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 " style={{ width: '80%', margin: '0 auto' }}> {/* Adjust width and margin as needed */}
+            <main className="max-w-6xl mx-auto pt-32 px-4 sm:px-6 lg:px-8 py-12">
                 <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
-                    Entries</h2>
-                {memberList.map(post => (
-                    <Accordion key={post.id} post={post} />
-                ))}
+                    Entries
+                </h2>
+                {/* Now passing the entire memberList to Team */}
+                <Team memberList={memberList} />
             </main>
 
 

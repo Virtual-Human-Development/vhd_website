@@ -34,5 +34,13 @@ export const blogPosts: BlogPost[] = [
         imgSrc: "/neurons_background.png",
         date: "Jan 28, 2024"
     },
+    {
+        id: 4,
+        title: "Let's make a real simulation of a full human ya'll!",
+        subtitle: "This is it yall. This post is something we're going to write about, so hang tight. There's plenty to write about here and we're going to go haaaaam on it! So ya dude let's do it. ",
+        content: "This is the content for Blog Post 3. Here we share some interesting insights.",
+        imgSrc: "/consortium.jpg",
+        date: "Jan 28, 2024"
+    },
     // Add more blog posts as needed
 ];
