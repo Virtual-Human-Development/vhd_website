@@ -208,4 +208,298 @@ export const memberList: MemberList[] = [
         group: "Core Team Members, Theoretical",
     },
     
+
+    // Core Team Members, Experimental
+
+    {
+        id: 3,
+        title: "Amy Wong",
+        imgSrc: "",
+        affiliation: "Sickkids Children's Hospital",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Arvind Mer",
+        imgSrc: "",
+        affiliation: "University of Ottawa",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Carl de Boer",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Daniel Coutu",
+        imgSrc: "",
+        affiliation: "Ottawa Hospital Research Institute",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "David Jorg Hans Fraser Knapp",
+        imgSrc: "",
+        affiliation: "",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Guillaume Blin",
+        imgSrc: "",
+        affiliation: "University of Edinburgh",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Ivana Barbaric",
+        imgSrc: "",
+        affiliation: "University of Sheffield",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Jun Wu",
+        imgSrc: "",
+        affiliation: "UT Southwestern Medical Center",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Katie Galloway",
+        imgSrc: "",
+        affiliation: "Massachusetts Institute of Technology",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Knut Woltjen",
+        imgSrc: "",
+        affiliation: "Kyoto University",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Laurent David",
+        imgSrc: "",
+        affiliation: "Université de Nantes",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Leonardo Morsut",
+        imgSrc: "",
+        affiliation: "University of Southern California",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Miki Ebisuya",
+        imgSrc: "",
+        affiliation: "EMBL",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Mo R. Ebrahimkhani",
+        imgSrc: "",
+        affiliation: "University of Pittsburgh",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Naoki Irie",
+        imgSrc: "",
+        affiliation: "SOKENDAI",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Nika Shakiba",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Nozomu Yachie",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Sadao Ota",
+        imgSrc: "",
+        affiliation: "University of Tokyo",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Samer Hussein",
+        imgSrc: "",
+        affiliation: "Laval University",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Satoru Okuda",
+        imgSrc: "",
+        affiliation: "Kanazawa University",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Takanori Takebe",
+        imgSrc: "",
+        affiliation: "University of Cincinnati",
+        group: "Core Team Members, Experimental",
+    },
+    
+    {
+        id: 3,
+        title: "Vincent Pasque",
+        imgSrc: "",
+        affiliation: "University of Leuven",
+        group: "Core Team Members, Experimental",
+    },
+
+
+
+    // Trainee List
+
+    {
+        id: 4,
+        title: "Matthieu Heitz",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Trainee Council",
+    },
+    
+    {
+        id: 4,
+        title: "Yeganeh Dorri Nokoorani",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Trainee Council",
+    },
+    
+    {
+        id: 4,
+        title: "Harry Chun Man Cheng",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Trainee Council",
+    },
+    
+    {
+        id: 4,
+        title: "Mia Brunetti",
+        imgSrc: "",
+        affiliation: "University of Montreal",
+        group: "Trainee Council",
+    },
+    
+
+    // Trainee Members
+    
+
+    {
+        id: 5,
+        title: "Henry Tat Quach",
+        imgSrc: "",
+        affiliation: "",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Joshua Jamie Hislop",
+        imgSrc: "",
+        affiliation: "University of Pittsburgh",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Kamyar Keshavarz",
+        imgSrc: "",
+        affiliation: "N/A",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Victoire Fort",
+        imgSrc: "",
+        affiliation: "N/A",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Gabriel Martínez-Gálvez",
+        imgSrc: "",
+        affiliation: "N/A",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Ali Shahdoost",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Arman Adel",
+        imgSrc: "",
+        affiliation: "University of British Columbia",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Spencer Farrell",
+        imgSrc: "",
+        affiliation: "University of Toronto",
+        group: "Trainee Members",
+    },
+    
+    {
+        id: 5,
+        title: "Michael Wu",
+        imgSrc: "",
+        affiliation: "Sick Kids Toronto",
+        group: "Trainee Members",
+    },
+    
+
 ];
+
+

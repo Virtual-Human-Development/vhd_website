@@ -16,7 +16,7 @@ import { MemberListProps } from '../types';
 
 export default function Home() {
     const { theme } = useTheme(); // Using theme from ThemeContext
-    const groups = ["Advisory Board", "Core Team Members, Theoretical"]; // Add more groups as needed
+    const groups = ["Advisory Board", "Core Team Members, Theoretical", "Core Team Members, Experimental", "Trainee Council", "Trainee Members"]; // Add more groups as needed
     const getMembersByGroup = (groupName: string): MemberListProps[] => {
         return memberList.filter(member => member.group === groupName);
     };
@@ -31,7 +31,7 @@ export default function Home() {
             <Navbar />
 
 
-            <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
+            <header className="text-center pt-28 pb-16" style={{ color: 'var(--text-color)' }}>
                 <div className="max-w-2xl mx-auto px-4">
                     <h1 className="text-4xl font-bold" style={{ color: 'var(--text-color)' }}>
                         TEAM
@@ -39,7 +39,7 @@ export default function Home() {
                 </div>
             </header>
 
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
@@ -56,7 +56,7 @@ export default function Home() {
 
 
             {groups.map(groupName => (
-                <main key={groupName} className="max-w-4xl mx-auto pt-32 px-4 sm:px-6 lg:px-8 py-12">
+                <main key={groupName} className="max-w-4xl mx-auto pt-10 px-4 sm:px-6 lg:px-8 py-12">
                     <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
                         {groupName}
                     </h2>

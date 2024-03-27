@@ -10,7 +10,7 @@ const Accordion: React.FC<{ post: BlogPostProps }> = ({ post }) => {
         const handleResize = () => {
             // Only execute in browser environment
             if (typeof window !== 'undefined') {
-                setIsMobile(window.innerWidth <= 600);
+                setIsMobile(window.innerWidth <= 640);
             }
         };
         // Initialize and add event listener
@@ -34,8 +34,8 @@ const Accordion: React.FC<{ post: BlogPostProps }> = ({ post }) => {
                     </div>
                     <div className="flex-grow p-4">
                         <div className={`text-sm ${isMobile ? 'mb-2' : 'mb-4'}`} style={{ color: 'var(--secondary-text-color)' }}>{post.date}</div>
-                        <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.25rem' }}>{post.title}</h3>
-                        <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p>
+                        <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.25rem', lineHeight: '1.2' }}>{post.title}</h3>
+                        <p className="mt-5 mb-5" style={{ color: 'var(--secondary-text-color)', lineHeight: '1.2' }}>{post.subtitle}</p>
                     </div>
                 </div>
                 {isOpen && (

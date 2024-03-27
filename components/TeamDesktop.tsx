@@ -10,7 +10,7 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
         const handleResize = () => {
             // Only execute in browser environment
             if (typeof window !== 'undefined') {
-                setIsMobile(window.innerWidth <= 600);
+                setIsMobile(window.innerWidth <= 640);
             }
         };
         // Initialize and add event listener
@@ -21,7 +21,7 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
     }, []);
 
     return (
-        <div className="pb-14">
+        <div className="pb-6">
             <div className="my-8 rounded-lg overflow-hidden shadow" style={{
                 backgroundColor: 'var(--entry-background-color)',
                 border: '0.1px solid var(--entry-border-color)',
@@ -29,7 +29,7 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
                 boxShadow: `0 3px 4px var(--entry-shadow-color), 0 2px 4px var(--entry-shadow-color)`,
             }}>
                 {/* Adjusted to always use flex-col for a consistent layout */}
-                <div className="flex flex-col items-start">
+                <div className="flex flex-col" style={{ maxHeight: '280px',  minHeight: '278px', overflowY: 'auto' }}>
                     <div className="w-full" style={{ overflow: 'hidden' }}>
                         <Image src={post.imgSrc} alt={post.title} width={300} height={300} className="rounded-t-lg" />
                     </div>

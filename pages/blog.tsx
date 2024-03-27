@@ -45,7 +45,7 @@ export default function Home() {
                 </div>
             </main>
 
-            <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 " style={{ width: '80%', margin: '0 auto' }}> {/* Adjust width and margin as needed */}
+            <main className="max-w-6xl mx-auto px-0 sm:px-6 lg:px-8 py-12 " style={{ width: '90%', margin: '0 auto' }}> {/* Adjust width and margin as needed */}
                 <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
                     Entries</h2>
                 {blogPosts.map(post => (

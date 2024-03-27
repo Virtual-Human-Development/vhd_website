@@ -54,9 +54,9 @@ body {
 
 /* Dark theme */
 :root {
-  --background-color: #0d0d0d;
-  --entry-background-color: #1a1a1ae8;
-  --entry-border-color: #232323;
+  --background-color: #060606;
+  --entry-background-color: #141414e8;
+  --entry-border-color: #181818;
   --entry-shadow-color: rgba(173, 173, 173, 0.221);
   --text-color: #f0f0f0;
   --secondary-text-color: #898989;

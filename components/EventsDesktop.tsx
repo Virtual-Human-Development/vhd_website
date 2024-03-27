@@ -10,7 +10,7 @@ const Accordion: React.FC<{ post: EventPostProps }> = ({ post }) => {
         const handleResize = () => {
             // Only execute in browser environment
             if (typeof window !== 'undefined') {
-                setIsMobile(window.innerWidth <= 768);
+                setIsMobile(window.innerWidth <= 640);
             }
         };
         // Initialize and add event listener
@@ -30,7 +30,7 @@ const Accordion: React.FC<{ post: EventPostProps }> = ({ post }) => {
             }}>
                 <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} items-start`}>
                     <div className={`flex-none ${isMobile ? 'w-full' : 'w-64'} ${isMobile ? 'h-48' : 'h-64'}`} style={{ overflow: 'hidden' }}>
-                        <Image src={post.imgSrc} alt={post.title} width={300} height={300} objectFit="cover" className={`rounded-t-lg ${isMobile ? '' : 'rounded-l-lg'}`} layout="responsive" />
+                        <Image src={post.imgSrc} alt={post.title} width={300} height={300} className={`rounded-t-lg ${isMobile ? '' : 'rounded-l-lg'}`} layout="responsive" />
                     </div>
                     <div className="flex-grow p-4">
                         <div className={`text-sm ${isMobile ? 'mb-2' : 'mb-4'}`} style={{ color: 'var(--secondary-text-color)' }}>{post.date}</div>

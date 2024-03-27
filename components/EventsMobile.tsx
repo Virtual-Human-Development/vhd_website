@@ -8,13 +8,13 @@ const MobileAccordion: React.FC<{ post: EventPostProps }> = ({ post }) => {
     return (
         <div className="pb-8">
             <div onClick={() => setIsOpen(!isOpen)} className="rounded-lg overflow-hidden shadow mx-1 sm:mx-2" style={{
-                backgroundColor: 'var(--background-color)',
+                backgroundColor: 'var(--entry-background-color)',
                 border: '0.1px solid var(--entry-border-color)',
                 boxShadow: `0 1px 1px var(--entry-shadow-color), 0 1px 2px var(--entry-shadow-color)`,
             }}>
                 <div className="flex flex-col items-center">
-                    <div className="w-full" style={{ overflow: 'hidden' }}>
-                        <Image src={post.imgSrc} alt={post.title} width={300} height={300} objectFit="cover" className="rounded-t-lg" layout="responsive" />
+                    <div className="w-1/2 py-6" style={{ overflow: 'hidden' }}>
+                        <Image src={post.imgSrc} alt={post.title} width={100} height={100} className="rounded-t-lg" layout="responsive" />
                     </div>
                     <div className="flex-grow p-4 text-center">
                         <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.date}</p>

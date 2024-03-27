@@ -64,12 +64,12 @@ export default function Home() {
           <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>Latest Updates</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
             {blogPosts.slice(0, 4).map((post) => ( // Only show the first 4 posts or however many you prefer
-              <div key={post.id} className="rounded-lg overflow-hidden shadow-lg" style={{ backgroundColor: 'var(--background-color)' }}>
+              <div key={post.id} className="rounded-lg overflow-hidden shadow-lg" style={{ backgroundColor: 'var(--entry-background-color)' }}>
                 <Link href={`/blog`} passHref>
                   <Image src={post.imgSrc} alt={post.title} width={400} height={250} className="w-full h-auto" layout="responsive" />
                   <div className="p-4">
-                    <h3 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>{post.title}</h3>
-                    <p className="text-sm" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p>
+                    <h3 className="text-md font-bold" style={{ color: 'var(--text-color)', fontSize: '0.9rem' }}>{post.title}</h3>
+                    <p className="text-sm pt-4" style={{ color: 'var(--secondary-text-color)', fontSize: '0.8rem' }}>{post.subtitle}</p>
                   </div>
                 </Link>
               </div>

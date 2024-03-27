@@ -56,7 +56,7 @@ export default function EventsPage() {
 
             {/* Loop through each event group and render Events component for each */}
             {eventGroups.map(status => (
-                <main key={status} className="max-w-4xl mx-auto pt-32 px-4 sm:px-6 lg:px-8 py-12">
+                <main key={status} className="max-w-4xl mx-auto pt-32 px-4 sm:px-6 lg:px-8 py-0">
                     <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
                         {status === "future" ? "Upcoming Events" : "Past Events"}
                     </h2>
