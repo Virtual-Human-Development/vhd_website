@@ -1,4 +1,4 @@
-// data/members.ts
+// data/membersList.ts
 
 export type MemberList = {
     id: number;

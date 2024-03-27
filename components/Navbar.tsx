@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768); // 768px is a common breakpoint for mobile views
+      setIsMobileView(window.innerWidth <= 600); // 768px is a common breakpoint for mobile views
     };
 
     handleResize(); // Set the initial state based on the current viewport width

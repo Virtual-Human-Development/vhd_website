@@ -10,7 +10,7 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
         const handleResize = () => {
             // Only execute in browser environment
             if (typeof window !== 'undefined') {
-                setIsMobile(window.innerWidth <= 768);
+                setIsMobile(window.innerWidth <= 600);
             }
         };
         // Initialize and add event listener
@@ -22,7 +22,7 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
 
     return (
         <div className="pb-14">
-            <div className="my-8 rounded-lg overflow-hidden shadow cursor-pointer" style={{
+            <div className="my-8 rounded-lg overflow-hidden shadow" style={{
                 backgroundColor: 'var(--entry-background-color)',
                 border: '0.1px solid var(--entry-border-color)',
                 margin: 'auto',

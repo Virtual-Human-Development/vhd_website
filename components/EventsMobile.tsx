@@ -1,9 +1,8 @@
-// MobileAccordion.js
 import React from 'react';
 import Image from 'next/image';
-import { MemberListProps } from '../types'; // Adjust the path as necessary
+import { EventPostProps } from '../types'; // Adjust the path as necessary
 
-const MobileAccordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
+const MobileAccordion: React.FC<{ post: EventPostProps }> = ({ post }) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
@@ -18,8 +17,9 @@ const MobileAccordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
                         <Image src={post.imgSrc} alt={post.title} width={300} height={300} objectFit="cover" className="rounded-t-lg" layout="responsive" />
                     </div>
                     <div className="flex-grow p-4 text-center">
-                        <div className="text-sm mb-2" style={{ color: 'var(--secondary-text-color)' }}>{post.affiliation}</div>
+                        <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.date}</p>
                         <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.1rem' }}>{post.title}</h3>
+                        <div className="text-sm mb-2" style={{ color: 'var(--secondary-text-color)' }}>{post.content}</div>
                         {/* Additional content can be uncommented or added here */}
                     </div>
                 </div>
