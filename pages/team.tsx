@@ -9,12 +9,17 @@ import { useTheme } from '../context/ThemeContext';
 
 import Team from '../components/Team';
 import { memberList } from '../data/memberList';
+import { MemberListProps } from '../types';
 
 
 
 
 export default function Home() {
     const { theme } = useTheme(); // Using theme from ThemeContext
+    const groups = ["Advisory Board", "Core Team Members, Theoretical"]; // Add more groups as needed
+    const getMembersByGroup = (groupName: string): MemberListProps[] => {
+        return memberList.filter(member => member.group === groupName);
+    };
 
     return (
         <div className="flex flex-col min-h-screen" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
@@ -50,13 +55,14 @@ export default function Home() {
 
 
 
-            <main className="max-w-6xl mx-auto pt-32 px-4 sm:px-6 lg:px-8 py-12">
-                <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
-                    Entries
-                </h2>
-                {/* Now passing the entire memberList to Team */}
-                <Team memberList={memberList} />
-            </main>
+            {groups.map(groupName => (
+                <main key={groupName} className="max-w-4xl mx-auto pt-32 px-4 sm:px-6 lg:px-8 py-12">
+                    <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>
+                        {groupName}
+                    </h2>
+                    <Team memberList={getMembersByGroup(groupName)} />
+                </main>
+                    ))}     
 
 
             <Footer />

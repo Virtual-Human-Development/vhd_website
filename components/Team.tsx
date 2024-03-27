@@ -18,14 +18,15 @@ const Team: React.FC<{ memberList: MemberListProps[] }> = ({ memberList }) => {
     }, []);
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-min">
+        <div className="grid grid-cols-2 gap-0 sm:gap-4 lg:grid-cols-4 auto-rows-min">
             {memberList.map((post) => (
-                <div key={post.id} className="pb-14">
+                <div key={post.id} className="pb-0">
                     {isMobile ? <TeamMobile post={post} /> : <TeamDesktop post={post} />}
                 </div>
             ))}
         </div>
     );
+    
 };
 
 export default Team;

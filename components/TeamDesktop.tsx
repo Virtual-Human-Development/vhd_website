@@ -22,11 +22,11 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
 
     return (
         <div className="pb-14">
-            <div onClick={() => setIsOpen(!isOpen)} className="my-8 rounded-lg overflow-hidden shadow cursor-pointer" style={{
+            <div className="my-8 rounded-lg overflow-hidden shadow cursor-pointer" style={{
                 backgroundColor: 'var(--entry-background-color)',
                 border: '0.1px solid var(--entry-border-color)',
                 margin: 'auto',
-                boxShadow: `0 2px 4px var(--entry-shadow-color), 0 2px 4px var(--entry-shadow-color)`,
+                boxShadow: `0 3px 4px var(--entry-shadow-color), 0 2px 4px var(--entry-shadow-color)`,
             }}>
                 {/* Adjusted to always use flex-col for a consistent layout */}
                 <div className="flex flex-col items-start">
@@ -35,9 +35,9 @@ const Accordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
                     </div>
                     <div className="flex-grow p-4">
                         <div className="text-sm mb-2" style={{ color: 'var(--secondary-text-color)' }}>{post.affiliation}</div>
-                        <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.25rem' }}>{post.title}</h3>
-                        <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p>
-                        <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.bio}</p>
+                        <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '1.0rem' }}>{post.title}</h3>
+                        {/*  <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.subtitle}</p> */}
+                        {/* <p className="mt-2" style={{ color: 'var(--secondary-text-color)' }}>{post.bio}</p> */}
                     </div>
                 </div>
             </div>
