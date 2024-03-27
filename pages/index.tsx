@@ -34,7 +34,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-              Join the community and make a difference.
+              Join the community and make difference.
             </h2>
             <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
               Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
