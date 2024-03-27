@@ -1,13 +1,18 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { UserButton } from "@clerk/nextjs";
+import { useUser, useClerk } from '@clerk/nextjs';
+import { UserButton } from '@clerk/nextjs';
+
 
 
 const NavbarDesktop = () => {
     const { theme, toggleTheme } = useTheme();
+    const { isSignedIn } = useUser(); // Use the useUser hook to check sign-in state
+    const { openSignIn } = useClerk(); // Access Clerk's openSignIn method to trigger the sign-in modal
 
     return (
+
         <nav className="shadow" style={{
             backgroundColor: 'var(--entry-background-color)',
             color: 'var(--text-color)',
@@ -58,7 +63,33 @@ const NavbarDesktop = () => {
                         }}></span>
                     </button>
 
-                    <Link href="/member_area" className="py-2 px-3" style={{ color: 'var(--text-color)' }}>  <UserButton /></Link>
+
+
+                    <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
+                        {/* Common Brand/Logo Section */}
+                        {/* ... */}
+
+                        {/* Conditional rendering for sign-in / sign-out */}
+                        <div className="flex items-center space-x-4">
+                            <button onClick={toggleTheme} style={{
+                                // Theme toggle button styles
+                            }}>
+                                {/* Theme toggle icon */}
+                            </button>
+
+                            {isSignedIn ? (
+                                <UserButton />
+                            ) : (
+                                // Use an `a` tag or similar element and bind the `openSignIn` method to its click event
+                                <a onClick={() => openSignIn()} className="py-2 px-3 cursor-pointer" style={{ color: 'var(--text-color)' }}>
+                                    Login
+                                </a>
+                            )}
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </nav>

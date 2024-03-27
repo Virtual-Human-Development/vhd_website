@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { UserButton } from "@clerk/nextjs";
-
+import { useUser, useClerk } from '@clerk/nextjs';
+import { UserButton } from '@clerk/nextjs';
 
 const NavbarMobile = () => {
     const { theme, toggleTheme } = useTheme();
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const { isSignedIn, user } = useUser(); // Use the useUser hook to check sign-in state
+    const { openSignIn } = useClerk(); // Access Clerk's openSignIn method to trigger the sign-in modal
 
     return (
         <nav
@@ -64,7 +66,16 @@ const NavbarMobile = () => {
                         <Link href="/team"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Team</span></Link>
                         <Link href="/blog"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Blog</span></Link>
                         <Link href="/sponsorship"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Sponsorship</span></Link>
-                        <Link href="/member_area"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}> <UserButton /></span></Link>
+
+                        {isSignedIn ? (
+                            <span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>
+                                <UserButton />
+                            </span>
+                        ) : (
+                            <a onClick={() => openSignIn()} className="py-2 px-3 text-right cursor-pointer" style={{ color: 'var(--text-color)' }}>
+                                Login
+                            </a>
+                        )}
 
                     </div>
                 </div>

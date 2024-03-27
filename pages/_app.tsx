@@ -7,13 +7,13 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return (
-      <ClerkProvider {...pageProps}>
+  return (
+    <ClerkProvider {...pageProps}>
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
-      </ClerkProvider>
-    );
-  }
-  
+    </ClerkProvider>
+  );
+}
+
 export default MyApp;

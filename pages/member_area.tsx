@@ -1,75 +1,72 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
-import ImageLink from '../components/ImageLink'; // Import the ImageLink component
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useTheme } from '../context/ThemeContext';
+import { useRouter } from 'next/router';
+import { useUser, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs';
 
 
 
+const MemberArea = () => {
+    // Use Clerk's useUser hook to access user state
+    const { isSignedIn } = useUser();
+    const router = useRouter();
 
-const blogUpdates = [
-    { id: 1, imgSrc: "/wizard_AI_creator.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
-    { id: 2, imgSrc: "/wizard_AI_work.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
-    { id: 3, imgSrc: "/tree_iceberg.png", title: "Blog Title 3", subtitle: "This is a subtitle for Blog 3" },
-    { id: 4, imgSrc: "/bio_eng_img.png", title: "Blog Title 4", subtitle: "This is a subtitle for Blog 4" },
-];
+    // Redirect non-signed-in users to the sign-in page
+    if (!isSignedIn) {
+        return <RedirectToSignIn />;
+    }
 
-
-export default function Home() {
-    const { theme } = useTheme(); // Using theme from ThemeContext
-
+    // Content for signed-in users
     return (
         <div className="flex flex-col min-h-screen" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
-            <Head>
-                <title>VHD Website</title>
-                <meta name="description" content="VHD Website" />
-            </Head>
-
             <Navbar />
 
-
-            <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
-                <div className="max-w-2xl mx-auto px-4">
-                    <h1 className="text-4xl font-bold" style={{ color: 'var(--text-color)' }}>
-                        MEMBER AREA
-                    </h1>
-                </div>
-            </header>
-
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            Join our community and make a difference.
-                        </h2>
-                        <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
-                        </p>
+            <div>
+                <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
+                    <div className="max-w-2xl mx-auto px-4">
+                        <h1 className="text-4xl font-bold" style={{ color: 'var(--text-color)' }}>
+                            MEMBER AREA
+                        </h1>
                     </div>
-                    <Image src="/bio_eng_img.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
-                </div>
-            </main>
+                </header>
 
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            The next generation of human developmental models.
-                        </h2>
-                        <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Leveraging a high-impact community with decades of modeling experience.
-                        </p>
+                <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
+                                Thank you for joining the VHD community.
+                            </h2>
+                            <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
+                                Here you can share data and play with models from other members.
+                            </p>
+                        </div>
+                        <Image src="/bio_eng_img.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                     </div>
-                    <Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
-                </div>
-            </main>
+                </main>
+            </div>
 
+            <div className="pt-20">
+                <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 border-t border-b">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
+                                MORE TO COME SOON
+                            </h2>
+                            <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
+                                Stay tuned.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
 
             <Footer />
+        </div>
+    );
+};
 
-        </div >
-    )
-}
+export default MemberArea;
+
