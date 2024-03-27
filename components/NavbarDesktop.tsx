@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import { UserButton } from "@clerk/nextjs";
 
 
 const NavbarDesktop = () => {
@@ -57,7 +58,7 @@ const NavbarDesktop = () => {
                         }}></span>
                     </button>
 
-                    <Link href="/login" className="py-2 px-3" style={{ color: 'var(--text-color)' }}>Login</Link>
+                    <Link href="/member_area" className="py-2 px-3" style={{ color: 'var(--text-color)' }}>  <UserButton /></Link>
                 </div>
             </div>
         </nav>

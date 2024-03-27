@@ -9,6 +9,7 @@ import { useTheme } from '../context/ThemeContext';
 
 
 
+
 const blogUpdates = [
     { id: 1, imgSrc: "/wizard_AI_creator.png", title: "Blog Title 1", subtitle: "This is a subtitle for Blog 1" },
     { id: 2, imgSrc: "/wizard_AI_work.png", title: "Blog Title 2", subtitle: "This is a subtitle for Blog 2" },
