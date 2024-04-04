@@ -7,7 +7,7 @@ const MemberArea = () => {
 
     const handleApiCall = async () => {
         try {
-            const response = await fetch('https://blv4jhr7zj.execute-api.us-east-2.amazonaws.com/vhd-api-1/profile', {
+            const response = await fetch('https://blv4jhr7zj.execute-api.us-east-2.amazonaws.com/vhd-api-2/profile', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ data: 'Your request data' }),
