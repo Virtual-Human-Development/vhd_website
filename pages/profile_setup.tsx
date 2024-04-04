@@ -1,53 +1,57 @@
+// pages/profile_setup.tsx
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
-const MemberArea = () => {
-    const [apiResponse, setApiResponse] = useState('');
+const ProfileSetup: React.FC = () => {
+    const [file, setFile] = useState<File | null>(null);
 
-    const handleApiCall = async () => {
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
+        if (files) {
+            setFile(files[0]); // Set the first selected file
+        }
+    };
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (!file) {
+            alert('Please select a file to upload.');
+            return;
+        }
+
         try {
-            const response = await fetch('https://blv4jhr7zj.execute-api.us-east-2.amazonaws.com/vhd-api-2/profile', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ data: 'Your request data' }),
+            // Request a presigned URL from your server
+            const response = await fetch('http://localhost:3000/generate-presigned-url');
+            const data = await response.json();
+
+            // Upload the file to S3
+            const uploadResponse = await fetch(data.url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'image/jpeg', // Adjust based on your file type
+                },
+                body: file,
             });
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            setApiResponse(JSON.stringify(data));
-        } catch (error) {
-            if (error instanceof Error) {
-                setApiResponse('Failed to call API: ' + error.message);
+            if (uploadResponse.ok) {
+                alert('Profile picture uploaded successfully.');
+                // Optionally, save the key (data.key) to your user's profile in your database
             } else {
-                setApiResponse('Failed to call API: An unexpected error occurred');
+                throw new Error('Failed to upload profile picture.');
             }
+        } catch (error) {
+            alert(error instanceof Error ? error.message : String(error));
         }
     };
 
     return (
-        <div className="flex flex-col min-h-screen">
-            <Navbar />
-
-            {/* Button to trigger API call */}
-            <div className="text-center pt-20">
-                <button
-                    onClick={handleApiCall}
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                    Call API
-                </button>
-
-                {/* Display API response */}
-                <p className="mt-4">{apiResponse}</p>
-            </div>
-
-            <Footer />
+        <div>
+            <h1>Profile Setup</h1>
+            <form onSubmit={handleSubmit}>
+                <input type="file" accept="image/*" onChange={handleFileChange} />
+                <button type="submit">Upload Profile Picture</button>
+            </form>
         </div>
     );
 };
 
-export default MemberArea;
+export default ProfileSetup;
