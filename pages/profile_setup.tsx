@@ -48,7 +48,7 @@ const ProfileSetup: React.FC = () => {
             <h1>Profile Setup</h1>
             <form onSubmit={handleSubmit}>
                 <input type="file" accept="image/*" onChange={handleFileChange} />
-                <button type="submit">Upload Profile Picture</button>
+                <button type="submit">Upload Profile Picture ..</button>
             </form>
         </div>
     );
