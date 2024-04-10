@@ -1,4 +1,9 @@
 // pages/api/generatePresignedUrl.js
+
+res.setHeader('Access-Control-Allow-Origin', '*'); // Or your specific origin instead of '*'
+res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
 import AWS from 'aws-sdk';
 
 export default async function handler(req, res) {

@@ -65,7 +65,7 @@ const ProfileSetup: React.FC = () => {
                 alert('Profile picture uploaded successfully.');
 
                 // After successful upload, notify the Lambda function
-                const simplifiedData = { key1: "Hello, Lambda!" };
+                const simplifiedData = { key1: "yo ho ho" };
 
                 const lambdaResponse = await fetch('https://7vt7lwfp4llwp6bcsgtdnzon4e0mlmnh.lambda-url.us-east-2.on.aws/', {
                     method: 'POST',
