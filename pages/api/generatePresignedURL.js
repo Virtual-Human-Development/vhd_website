@@ -11,13 +11,13 @@ export default async function handler(req, res) {
         });
 
         const s3 = new AWS.S3();
-        const bucketName = 'your-bucket-name';
+        const bucketName = 'memberprofilepictures';
         const key = `uploads/${Date.now()}-user-image`;
 
         const params = {
             Bucket: bucketName,
             Key: key,
-            Expires: 60 * 5, // Expires in 5 minutes
+            Expires: 60 * 50, // Expires in 5 minutes
             ContentType: 'image/jpeg',
         };
 
