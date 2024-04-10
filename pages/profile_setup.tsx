@@ -45,7 +45,7 @@ const ProfileSetup: React.FC = () => {
 
         try {
             // Fetch the presigned URL for S3 upload
-            const presignedUrlResponse = await fetch('https://vhd-website.vercel.app/api/generatePresignedURL');
+            const presignedUrlResponse = await fetch('api/generatePresignedURL');
             if (!presignedUrlResponse.ok) {
                 throw new Error('Failed to fetch the presigned URL.');
             }
