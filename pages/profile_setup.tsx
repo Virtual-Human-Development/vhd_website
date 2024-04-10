@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useUser, RedirectToSignIn } from '@clerk/nextjs';
+import React, { useState, FormEvent } from 'react'; // Import FormEvent
 
 const ProfileSetup: React.FC = () => {
     const { isSignedIn } = useUser();
@@ -35,7 +35,7 @@ const ProfileSetup: React.FC = () => {
         }));
     };
 
-    const handleImageUpload = async (event) => {
+    const handleImageUpload = async (event: FormEvent<HTMLFormElement>) => { // Explicitly type the event parameter
         event.preventDefault();
     
         if (!file) {
