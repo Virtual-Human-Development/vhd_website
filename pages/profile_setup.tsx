@@ -37,20 +37,20 @@ const ProfileSetup: React.FC = () => {
 
     const handleImageUpload = async (event: FormEvent<HTMLFormElement>) => { // Explicitly type the event parameter
         event.preventDefault();
-    
+
         if (!file) {
             alert('Please select a file to upload.');
             return;
         }
-    
+
         try {
             // Fetch the presigned URL for S3 upload
-            const presignedUrlResponse = await fetch('https://vhd-website.vercel.app/api/generatePresignedUrl');
+            const presignedUrlResponse = await fetch('https://vhd-website.vercel.app/api/generatePresignedURL');
             if (!presignedUrlResponse.ok) {
                 throw new Error('Failed to fetch the presigned URL.');
             }
             const { url, key } = await presignedUrlResponse.json();
-    
+
             // Use the presigned URL to upload the file to S3
             const uploadResponse = await fetch(url, {
                 method: 'PUT',
@@ -59,7 +59,7 @@ const ProfileSetup: React.FC = () => {
                 },
                 body: file,
             });
-    
+
             if (uploadResponse.ok) {
                 console.log('File uploaded successfully to:', key);
                 alert('Profile picture uploaded successfully.');
@@ -74,7 +74,7 @@ const ProfileSetup: React.FC = () => {
                     },
                     body: JSON.stringify(simplifiedData),
                 });
-                
+
                 const responseData = await lambdaResponse.json();
                 console.log('Lambda response:', responseData);
             } else {
@@ -105,7 +105,7 @@ const ProfileSetup: React.FC = () => {
                         <input type="file" accept="image/*" onChange={handleFileChange} className="block w-full text-sm text-gray-900 border rounded-lg cursor-pointer" style={{ backgroundColor: 'var(--input-background-color)', color: 'var(--text-color)' }} />
                         <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Upload Profile Picture</button>
                     </form>
-                    
+
                     <form onSubmit={handleProfileUpdate} className="space-y-4 mt-8">
                         <input type="text" name="fullName" value={profile.fullName} onChange={handleChange} placeholder="Full Name" className="block w-full text-sm text-gray-900 border rounded-lg" />
                         <input type="text" name="universityAffiliation" value={profile.universityAffiliation} onChange={handleChange} placeholder="University Affiliation" className="block w-full text-sm text-gray-900 border rounded-lg" />
@@ -113,7 +113,7 @@ const ProfileSetup: React.FC = () => {
                         <input type="text" name="twitter" value={profile.twitter} onChange={handleChange} placeholder="Twitter" className="block w-full text-sm text-gray-900 border rounded-lg" />
                         <input type="text" name="linkedin" value={profile.linkedin} onChange={handleChange} placeholder="LinkedIn" className="block w-full text-sm text-gray-900 border rounded-lg" />
                         <input type="text" name="googleScholar" value={profile.googleScholar} onChange={handleChange} placeholder="Google Scholar" className="block w-full text-sm text-gray-900 border rounded-lg" />
-                        <button type="submit" className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">Update Profile Information</button>  
+                        <button type="submit" className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">Update Profile Information</button>
                     </form>
                 </div>
             </main>
