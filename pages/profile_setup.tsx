@@ -6,6 +6,7 @@ import React, { useState, FormEvent } from 'react'; // Import FormEvent
 
 const ProfileSetup: React.FC = () => {
     const { isSignedIn } = useUser();
+    const [lambdaResponseMessage, setLambdaResponseMessage] = useState('');
     const [file, setFile] = useState<File | null>(null);
     const [profile, setProfile] = useState({
         fullName: '',
@@ -77,6 +78,7 @@ const ProfileSetup: React.FC = () => {
 
                 const responseData = await lambdaResponse.json();
                 console.log('Lambda response:', responseData);
+                setLambdaResponseMessage(responseData.message); // Update the state with the response message
             } else {
                 throw new Error('Upload failed with HTTP status ' + uploadResponse.status);
             }
@@ -115,6 +117,14 @@ const ProfileSetup: React.FC = () => {
                         <input type="text" name="googleScholar" value={profile.googleScholar} onChange={handleChange} placeholder="Google Scholar" className="block w-full text-sm text-gray-900 border rounded-lg" />
                         <button type="submit" className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">Update Profile Information</button>
                     </form>
+                </div>
+                <div className="flex flex-col min-h-screen" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
+                    {/* ...other components... */}
+
+                    {/* Add this paragraph below your forms or wherever you'd like to display the message */}
+                    {lambdaResponseMessage && <p>Lambda Response: {lambdaResponseMessage}</p>}
+
+                    {/* ...rest of your component */}
                 </div>
             </main>
             <Footer />
