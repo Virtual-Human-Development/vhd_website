@@ -8,17 +8,17 @@ import React, { useState, FormEvent } from 'react'; // Import FormEvent
 
 
 const ProfileSetup: React.FC = () => {
-    const { isSignedIn } = useUser();
+    const { isSignedIn, user } = useUser();
+
+    // Define all state hooks at the top level, unconditionally
     const [lambdaResponseMessage, setLambdaResponseMessage] = useState('');
     const [file, setFile] = useState<File | null>(null);
     const [isPictureUploaded, setIsPictureUploaded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [uploadSuccess, setUploadSuccess] = useState(false);
     const [uploadedImageUrl, setUploadedImageUrl] = useState('');
-
-
+    const [uploadKey, setUploadKey] = useState('');
     const [profile, setProfile] = useState({
-
         fullName: '',
         universityAffiliation: '',
         bio: '',
@@ -46,7 +46,7 @@ const ProfileSetup: React.FC = () => {
         }));
     };
 
-    const handleImageUpload = async (event: FormEvent<HTMLFormElement>) => {
+    const handleImageUpload = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!file) {
             alert('Please select a file to upload.');
@@ -76,10 +76,13 @@ const ProfileSetup: React.FC = () => {
                 console.log('File uploaded successfully to:', key);
                 setIsPictureUploaded(true);
                 setUploadSuccess(true); // Indicate success
-                setUploadedImageUrl(`https://memberprofilepictures.s3.amazonaws.com/${key}`); // Assuming 'url' is the URL where the image is accessible, you might need to adjust based on your response structure.
+                setUploadedImageUrl(`https://memberprofilepictures.s3.amazonaws.com/${key}`);
+                setUploadKey(key);  // Assuming you have a state setter for this;
+
                 const lambdaData = {
+                    userId: user.id, // Use the userId from Clerk
                     key1: "yo ho ho",
-                    key: key // Sending this to the Lambda so it can return the image URL
+                    key: key
                 };
 
                 const lambdaResponse = await fetch('https://7vt7lwfp4llwp6bcsgtdnzon4e0mlmnh.lambda-url.us-east-2.on.aws/', {
@@ -106,11 +109,45 @@ const ProfileSetup: React.FC = () => {
         }
     };
 
+
     const handleProfileUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevent default form submission behavior
         console.log('Updating profile information...', profile);
-        alert('Profile update functionality not implemented yet.');
+
+        // Construct the payload to send to the backend
+        const updateData = {
+            userId: user.id,
+            fullName: profile.fullName,
+            universityAffiliation: profile.universityAffiliation,
+            bio: profile.bio,
+            twitter: profile.twitter,
+            linkedin: profile.linkedin,
+            googleScholar: profile.googleScholar,
+            key: uploadKey // Use the key stored after the image upload
+        };
+
+        try {
+            // Here you would send a request to your Lambda function which handles DynamoDB updates
+            const response = await fetch('https://7vt7lwfp4llwp6bcsgtdnzon4e0mlmnh.lambda-url.us-east-2.on.aws/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updateData),
+            });
+            const responseData = await response.json();
+            if (response.ok) {
+                alert('Profile updated successfully.');
+                setLambdaResponseMessage(responseData.message);
+            } else {
+                throw new Error(responseData.message || 'Failed to update profile');
+            }
+        } catch (error) {
+            console.error('Error updating profile:', error);
+            alert(error instanceof Error ? error.message : String(error));
+        }
     };
+
 
     return (
         <div className="flex flex-col min-h-screen" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>

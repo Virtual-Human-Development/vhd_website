@@ -1,0 +1,25 @@
+export const handler = async (event) => {
+    let requestBody;
+    try {
+        requestBody = JSON.parse(event.body);
+    } catch (error) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Invalidd or missing body" }),
+        };
+    }
+
+    const { key } = requestBody; // assuming the key is sent in the request body
+
+    // Construct the URL of the uploaded image
+    const imageUrl = `https://memberprofilepictures.s3.amazonaws.com/${key}`;
+
+    const responseMessage = `Hello from Lambda! Received your data: ${requestBody.key1}`;
+
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify({ message: responseMessage, imageUrl: imageUrl }),
+    };
+
+    return response;
+};
