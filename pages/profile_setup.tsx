@@ -76,20 +76,26 @@ const ProfileSetup: React.FC = () => {
                 console.log('File uploaded successfully to:', key);
                 setIsPictureUploaded(true);
                 setUploadSuccess(true); // Indicate success
-                setUploadedImageUrl(url); // Assuming 'url' is the URL where the image is accessible, you might need to adjust based on your response structure.
-                const simplifiedData = { key1: "yo ho ho" };
+                setUploadedImageUrl(`https://memberprofilepictures.s3.amazonaws.com/${key}`); // Assuming 'url' is the URL where the image is accessible, you might need to adjust based on your response structure.
+                const lambdaData = {
+                    key1: "yo ho ho",
+                    key: key // Sending this to the Lambda so it can return the image URL
+                };
 
                 const lambdaResponse = await fetch('https://7vt7lwfp4llwp6bcsgtdnzon4e0mlmnh.lambda-url.us-east-2.on.aws/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(simplifiedData),
+                    body: JSON.stringify(lambdaData),
                 });
 
                 const responseData = await lambdaResponse.json();
                 console.log('Lambda response:', responseData);
                 setLambdaResponseMessage(responseData.message); // Update the state with the response message
+                if (responseData.imageUrl) {
+                    setUploadedImageUrl(responseData.imageUrl); // Set the image URL from Lambda's response
+                }
             } else {
                 throw new Error('Upload failed with HTTP status ' + uploadResponse.status);
             }
@@ -134,8 +140,8 @@ const ProfileSetup: React.FC = () => {
                             </form>
                         ) : (
                             <div>
-                                <p>Profile picture uploaded successfully!</p>
-                                <img src={uploadedImageUrl} alt="Uploaded Profile" className="w-32 h-32 rounded-full" />
+                                <p className="pb-10">Profile picture uploaded successfully!</p>
+                                <img src={uploadedImageUrl} alt="Hmmmm didnt work out" className="w-32 h-32 rounded" />
                             </div>
                         )}
                     </div>
