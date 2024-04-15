@@ -10,7 +10,7 @@ import React, { useState, FormEvent } from 'react'; // Import FormEvent
 const ProfileSetup: React.FC = () => {
     const { isSignedIn, user } = useUser();
 
-    // Define all state hooks at the top level, unconditionally
+    // State hooks
     const [lambdaResponseMessage, setLambdaResponseMessage] = useState('');
     const [file, setFile] = useState<File | null>(null);
     const [isPictureUploaded, setIsPictureUploaded] = useState(false);
@@ -79,6 +79,7 @@ const ProfileSetup: React.FC = () => {
                 setUploadedImageUrl(`https://memberprofilepictures.s3.amazonaws.com/${key}`);
                 setUploadKey(key);  // Assuming you have a state setter for this;
 
+
                 const lambdaData = {
                     userId: user.id, // Use the userId from Clerk
                     key1: "yo ho ho",
@@ -125,6 +126,8 @@ const ProfileSetup: React.FC = () => {
             googleScholar: profile.googleScholar,
             key: uploadKey // Use the key stored after the image upload
         };
+
+        console.log("Sending update data:", updateData);
 
         try {
             // Here you would send a request to your Lambda function which handles DynamoDB updates
