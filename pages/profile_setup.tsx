@@ -1,10 +1,9 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useUser, RedirectToSignIn } from '@clerk/nextjs';
 import React, { useState, FormEvent } from 'react'; // Import FormEvent
-
-
 
 
 const ProfileSetup: React.FC = () => {
@@ -112,10 +111,9 @@ const ProfileSetup: React.FC = () => {
 
 
     const handleProfileUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault(); // Prevent default form submission behavior
+        event.preventDefault();
         console.log('Updating profile information...', profile);
 
-        // Construct the payload to send to the backend
         const updateData = {
             userId: user.id,
             fullName: profile.fullName,
@@ -124,13 +122,12 @@ const ProfileSetup: React.FC = () => {
             twitter: profile.twitter,
             linkedin: profile.linkedin,
             googleScholar: profile.googleScholar,
-            key: uploadKey // Use the key stored after the image upload
+            uploadKey: uploadKey // Changed to 'uploadKey' to match the lambda function expecting this key
         };
 
         console.log("Sending update data:", updateData);
 
         try {
-            // Here you would send a request to your Lambda function which handles DynamoDB updates
             const response = await fetch('https://7vt7lwfp4llwp6bcsgtdnzon4e0mlmnh.lambda-url.us-east-2.on.aws/', {
                 method: 'POST',
                 headers: {
@@ -150,6 +147,7 @@ const ProfileSetup: React.FC = () => {
             alert(error instanceof Error ? error.message : String(error));
         }
     };
+
 
 
     return (
@@ -181,7 +179,16 @@ const ProfileSetup: React.FC = () => {
                         ) : (
                             <div>
                                 <p className="pb-10">Profile picture uploaded successfully!</p>
-                                <img src={uploadedImageUrl} alt="Hmmmm didnt work out" className="w-32 h-32 rounded" />
+                                {uploadedImageUrl && (
+                                    <div className="relative w-32 h-32 rounded overflow-hidden">
+                                        <Image
+                                            src={uploadedImageUrl}
+                                            alt="Uploaded Profile Picture"
+                                            layout="fill"
+                                            objectFit="cover"
+                                        />
+                                    </div>
+                                )}
                             </div>
                         )}
                     </div>
