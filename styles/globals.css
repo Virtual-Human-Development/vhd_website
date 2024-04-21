@@ -61,6 +61,12 @@ body {
   --text-color: #f0f0f0;
   --secondary-text-color: #898989;
   --small-font-size: 14px;
+  --button-background-color: #303ae8;
+  /* Blue for dark mode */
+  --button-text-color: #ffffff;
+  --button-shadow-color: rgba(0, 0, 0, 0.2);
+  --button-hover-color: #d22a2a;
+  /* Slightly darker blue on hover */
 }
 
 /* Light theme */
@@ -72,7 +78,14 @@ body {
   --text-color: #212121;
   --secondary-text-color: #575757;
   --small-font-size: 14px;
+  --button-background-color: #0a13ce;
+  /* Lighter blue for light mode */
+  --button-text-color: #ffffff;
+  --button-shadow-color: rgba(0, 0, 0, 0.1);
+  --button-hover-color: #d22a2a;
+  /* Slightly darker blue on hover */
 }
+
 
 .header-content,
 .header-content h1 {
@@ -166,4 +179,21 @@ body {
 
 .animation-delay-600 {
   animation-delay: 0.6s;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.loading-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 0.1s forwards;
 }
