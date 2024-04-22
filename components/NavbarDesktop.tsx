@@ -5,7 +5,6 @@ import { useUser, useClerk } from '@clerk/nextjs';
 import { UserButton } from '@clerk/nextjs';
 
 
-
 const NavbarDesktop = () => {
     const { theme, toggleTheme } = useTheme();
     const { isSignedIn } = useUser(); // Use the useUser hook to check sign-in state
@@ -34,6 +33,7 @@ const NavbarDesktop = () => {
                         <Link href="/team" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Team</Link>
                         <Link href="/blog" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Blog</Link>
                         <Link href="/sponsorship" className="py-5 px-3" style={{ color: 'var(--text-color)' }}>Sponsorship</Link>
+                        {isSignedIn && <Link href="/member_area" style={{ color: 'var(--accent-text-color)' }}  className="font-bold py-5 px-3">Member Area</Link>}
                     </div>
                 </div>
 

@@ -23,3 +23,82 @@ export const handler = async (event) => {
 
     return response;
 };
+
+
+
+
+API URL THAT WORKS:
+
+https://blv4jhr7zj.execute-api.us-east-2.amazonaws.com/vhd-api-2/profile
+
+
+
+Lambda function working April 22nd 2:30pm: 
+
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb';
+
+const dbClient = new DynamoDBClient();
+const docClient = DynamoDBDocumentClient.from(dbClient);
+
+export const handler = async (event) => {
+    console.log("Received event:", event); // Log the entire event to see what you are working with
+
+    let requestBody;
+    try {
+        requestBody = JSON.parse(event.body);
+        console.log("Parsed request body:", requestBody); // Log parsed body to verify structure
+    } catch (error) {
+        console.error("Error parsing request body:", error);
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Invalid or missing body" })
+        };
+    }
+
+    const {
+        userId,
+        fullName,
+        uniAffiliation,
+        bio,
+        twitter,
+        linkedin,
+        googleScholar,
+        key // This is used to construct the imageUrl
+    } = requestBody;
+
+    const imageUrl = `https://memberprofilepictures.s3.amazonaws.com/${key}`;
+
+    const params = {
+        TableName: "UserProfile",
+        Item: {
+            userId, // Ensure this is the primary key in your DynamoDB table
+            fullName,
+            uniAffiliation,
+            bio,
+            twitter,
+            linkedin,
+            googleScholar,
+            imageUrl, // Constructed from the S3 key
+            updatedAt: new Date().toISOString()
+        }
+    };
+
+    try {
+        await docClient.send(new PutCommand(params));
+        console.log("Successfully inserted item:", params.Item);
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ 
+                message: "Profile picture successfully updated",
+                data: params.Item
+            })
+        };
+    } catch (dbError) {
+        console.error("Error inserting item into DynamoDB:", dbError);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: "Failed to update profile", error: dbError })
+        };
+    }
+};

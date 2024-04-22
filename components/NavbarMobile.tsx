@@ -66,6 +66,10 @@ const NavbarMobile = () => {
                         <Link href="/team"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Team</span></Link>
                         <Link href="/blog"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Blog</span></Link>
                         <Link href="/sponsorship"><span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>Sponsorship</span></Link>
+                        {isSignedIn && (
+                            <Link href="/member_area">
+                                <span className="py-2 px-3 text-right font-bold" style={{ color: 'var(--accent-text-color)' }}>Member Area</span>
+                            </Link>)}
 
                         {isSignedIn ? (
                             <span className="py-2 px-3 text-right" style={{ color: 'var(--text-color)' }}>

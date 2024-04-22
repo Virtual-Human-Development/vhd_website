@@ -8,60 +8,112 @@ import { useRouter } from 'next/router';
 import { useUser, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs';
 
 
+interface Profile {
+    imageUrl: string;
+    fullName: string;
+    uniAffiliation: string;
+    bio: string;
+    twitter?: string;
+    linkedin?: string;
+    googleScholar?: string;
+}
+
 
 const MemberArea = () => {
-    // Use Clerk's useUser hook to access user state
-    const { isSignedIn } = useUser();
+    const { user, isSignedIn } = useUser();
     const router = useRouter();
+    const [profile, setProfile] = useState<Profile | null>(null);
+    const [error, setError] = useState<string>('');
 
-    // Redirect non-signed-in users to the sign-in page
+
+    async function getUser(){
+        const output = await fetch("/api/test",{
+            method:"POST",
+            body:JSON.stringify({
+                UserID:user?.id
+            })
+        })
+        const unpackedOutput = output.json()
+    }
+
+    useEffect(()=>{
+        getUser()
+    },[])
+
+    useEffect(() => {
+        const fetchProfile = async () => {
+            if (isSignedIn && user) {
+                const apiURL = `https://blv4jhr7zj.execute-api.us-east-2.amazonaws.com/vhd-api-2/profile/${user.id}`;
+                try {
+                    const response = await fetch(apiURL);
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch profile data');
+                    }
+                    const data: Profile = await response.json();
+                    setProfile(data);
+                } catch (err) {
+                    const message = err instanceof Error ? err.message : 'An unknown error occurred';
+                    setError(message);
+                }
+            }
+        };
+
+        fetchProfile();
+    }, [user, isSignedIn]);
+
     if (!isSignedIn) {
         return <RedirectToSignIn />;
     }
 
-    // Content for signed-in users
+
     return (
         <div className="flex flex-col min-h-screen" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
             <Navbar />
-
-            <div>
-                <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
-                    <div className="max-w-2xl mx-auto px-4">
-                        <h1 className="text-4xl font-bold" style={{ color: 'var(--text-color)' }}>
-                            MEMBER AREA
-                        </h1>
-                    </div>
-                </header>
-
-                <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                                Thank you for joining the VHD community.
-                            </h2>
-                            <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                                Here you can share data and play with models from other members.
-                            </p>
-                        </div>
-                        <Image src="/bio_eng_img.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
-                    </div>
-                </main>
+            <Head><title>Member Area</title></Head>
+            <div className="text-center pt-20 pb-16">
+                <h1 className="text-4xl font-bold">MEMBER AREA</h1>
             </div>
-
-            <div className="pt-20">
-                <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 border-t border-b">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                                MORE TO COME SOON
-                            </h2>
-                            <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                                Stay tuned.
-                            </p>
-                        </div>
+            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 className="text-lg font-bold">Your Profile Information</h2>
+                {error ? <p className="text-red-500">{error}</p> : (profile ? (
+                    <div className="space-y-4">
+                        <Image src={profile.imageUrl} alt="Profile Image" width={200} height={200} className="rounded-full" />
+                        <p>Full Name: {profile.fullName}</p>
+                        <p>University Affiliation: {profile.uniAffiliation}</p>
+                        <p>Bio: {profile.bio}</p>
+                        <button
+                            onClick={() => router.push('/profile_setup')}
+                            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-colors"
+                        >
+                            Update Profile Information
+                        </button>
                     </div>
-                </main>
-            </div>
+                ) : <p>Loading profile...</p>)}
+            </main>
+
+            
+
+
+
+
+            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 border-t border-b">
+                <h2 className="text-lg font-bold">MORE TO COME SOON</h2>
+                <p>Profile INFORMATION</p>
+            </main>
+
+
+
+
+
+
+
+            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 border-t border-b">
+                <h2 className="text-lg font-bold">MORE TO COME SOON</h2>
+                <p>Stay tuned.</p>
+            </main>
+
+
+
 
             <Footer />
         </div>
@@ -69,4 +121,3 @@ const MemberArea = () => {
 };
 
 export default MemberArea;
-

@@ -6,6 +6,7 @@ import { useUser, RedirectToSignIn } from '@clerk/nextjs';
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
+
 const ProfileSetup: React.FC = () => {
     const { isSignedIn, user } = useUser();
 
