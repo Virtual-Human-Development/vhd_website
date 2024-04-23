@@ -7,6 +7,15 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
 
+function normalizeUrl(url) {
+    if (!url) return url; // If no URL, return as is
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        return url; // Return the URL if it already includes a protocol
+    }
+    return `https://${url}`; // Prepend https:// if the URL lacks a protocol
+}
+
+
 const ProfileSetup: React.FC = () => {
     const { isSignedIn, user } = useUser();
 
@@ -95,17 +104,26 @@ const ProfileSetup: React.FC = () => {
     const handleProfileUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsLoading(true);
+
+
         if (!uploadKey) {
             alert("Image key is missing, please upload the image again.");
             setIsLoading(false);
             return;
         }
-        const updateData = {
-            userId: user.id,
+        // Apply the normalizeUrl function to URL fields
+        const updatedProfile = {
             ...profile,
+            twitter: normalizeUrl(profile.twitter),
+            linkedin: normalizeUrl(profile.linkedin),
+            googleScholar: normalizeUrl(profile.googleScholar),
             uploadKey
         };
-    
+
+        const updateData = {
+            userId: user.id,
+            ...updatedProfile
+        };
         console.log("Sending Update Data:", updateData); // Added logging
     
         try {
@@ -124,6 +142,8 @@ const ProfileSetup: React.FC = () => {
         } catch (error) {
             const message = error instanceof Error ? error.message : "An unknown error occurred";
             setProfileUpdateMessage('Error updating profile: ' + message);
+        } finally {
+            setIsLoading(false);
         }
     };
 

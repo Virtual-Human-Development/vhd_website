@@ -1,22 +1,45 @@
-// pages/_app.tsx
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { ClerkProvider, ClerkLoaded, useUser } from "@clerk/nextjs";
 import { ThemeProvider } from '../context/ThemeContext';
-import Head from 'next/head';
-import { ClerkProvider, ClerkLoaded } from "@clerk/nextjs";
+import type { AppProps } from 'next/app';
+import '../styles/globals.css';
 
-// Assuming you have your Clerk frontend API loaded as an environment variable
+interface ExtendedUserResource {
+  id: string;
+  firstName: string;
+  lastName: string;
+  emailAddress: string;
+  profile?: {
+    isComplete?: boolean;
+  };
+}
+
 const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ClerkProvider frontendApi={clerkFrontendApi} {...pageProps}>
       <ClerkLoaded>
-        <ThemeProvider>
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <MyComponent Component={Component} pageProps={pageProps} router={router} />
       </ClerkLoaded>
     </ClerkProvider>
+  );
+}
+
+function MyComponent({ Component, pageProps, router }: AppProps) {
+  const { isSignedIn, user } = useUser() as { isSignedIn: boolean, user: ExtendedUserResource | null };
+
+  useEffect(() => {
+    if (isSignedIn && !user?.profile?.isComplete) {
+      router.push('/member_area');
+    }
+  }, [isSignedIn, user?.profile?.isComplete, router]);
+
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
   );
 }
 
