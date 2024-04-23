@@ -169,7 +169,7 @@ const MemberArea = () => {
                         </div>
                     </div>
                ) : <p>Loading profile...</p>)}
-               <h2 className="text-lg font-bold mt-8">All Members</h2>
+               <h2 className="text-lg font-bold mt-20">Recently Registered Members</h2>
                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                    {profiles.map((profile, index) => (
                        <div key={index} className="pb-6">
