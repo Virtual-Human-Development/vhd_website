@@ -155,7 +155,32 @@ const MemberArea = () => {
                             </div>
                         </div>
                         <div className="text-right p-4">
-                            <button onClick={() => router.push('/profile_setup')} className="px-4 py-2 rounded text-white transition-colors duration-200"
+
+                            <button onClick={() => router.push('/data_submission')} className="px-4 py-2 mx-1 rounded"
+                                style={{
+                                    backgroundColor: 'var(--background-color)',
+                                    color: 'var(--button-text-color)',
+                                    boxShadow: 'var(--special-button-color) 0px 0px 4px'
+                                }}
+                                onMouseOver={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--special-button-color)'}
+                                onMouseOut={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--background-color)'}
+                            >
+                                Submit Data
+                            </button>
+
+                            <button onClick={() => router.push('/model_submission')} className="px-4 py-2 mx-1 rounded"
+                                style={{
+                                    backgroundColor: 'var(--background-color)',
+                                    color: 'var(--button-text-color)',
+                                    boxShadow: 'var(--special-button-color) 0px 0px 4px'
+                                }}
+                                onMouseOver={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--special-button-color)'}
+                                onMouseOut={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--background-color)'}
+                            >
+                                Submit Model
+                            </button>
+                            
+                            <button onClick={() => router.push('/profile_setup')} className="px-4 py-2 mx-4 rounded"
                                 style={{
                                     backgroundColor: 'var(--background-color)',
                                     color: 'var(--button-text-color)',
@@ -166,6 +191,8 @@ const MemberArea = () => {
                             >
                                 Edit Profile Information
                             </button>
+
+
                         </div>
                     </div>
                 ) : <p>Loading profile...</p>}

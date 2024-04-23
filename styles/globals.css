@@ -62,6 +62,7 @@ body {
   --secondary-text-color: #898989;
   --small-font-size: 14px;
   --button-background-color: #374a63f1;
+  --special-button-color: #226037f1;
   --alert-button-background-color: #872525;
   /* Blue for dark mode */
   --button-text-color: #ffffff;
@@ -81,6 +82,7 @@ body {
   --secondary-text-color: #575757;
   --small-font-size: 14px;
   --button-background-color: #9db0d1;
+  --special-button-color: #619954;
   --alert-button-background-color: #f08686;
   /* Lighter blue for light mode */
   --button-text-color: #060606;

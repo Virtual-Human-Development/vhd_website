@@ -155,11 +155,11 @@ const ProfileSetup: React.FC = () => {
             <main className="flex-grow container mx-auto px-4 py-12">
                 <div className="max-w-4xl mx-auto">
                     <div className="shadow-lg rounded-lg p-6 mb-4" style={{ backgroundColor: 'var(--entry-background-color)' }}>
-                        <h1 className="text-2xl font-bold mb-4">Profile Picture</h1>
+                        <h1 className="text-2xl font-bold mb-4">Data Submission</h1>
                         {!isPictureUploaded ? (
                             <form onSubmit={handleImageUpload} className="space-y-4">
-                                <p>Please upload a profile picture to continue with your profile setup.</p>
-                                <input type="file" accept="image/*" onChange={handleFileChange} className="block w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg cursor-pointer" />
+                                <p> Upload data here. </p>
+                                <input type="file" accept="*" onChange={handleFileChange} className="block w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg cursor-pointer" />
                                 {isLoading ? (
                                     <div className="flex justify-left items-left">
                                         {loadingText}
@@ -169,12 +169,12 @@ const ProfileSetup: React.FC = () => {
                                         type="submit"
                                         className="px-4 py-2 rounded text-white transition-colors duration-200"
                                         style={{
-                                            backgroundColor: 'var(--button-background-color)',
+                                            backgroundColor: 'var(--special-button-color)',
                                             color: 'var(--button-text-color)',
                                             boxShadow: 'var(--button-shadow-color) 0px 2px 4px'
                                         }}
-                                        onMouseOver={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--button-hover-color)'}
-                                        onMouseOut={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--button-background-color)'}
+                                        onMouseOver={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--button-background-color)'}
+                                        onMouseOut={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--special-button-color)'}
                                     >
                                         Upload
                                     </button>
@@ -192,16 +192,14 @@ const ProfileSetup: React.FC = () => {
                             </div>
                         )}
                     </div>
-                    {isPictureUploaded && !profileUpdated && (
+                    
                         <div className="shadow-lg rounded-lg p-6" style={{ backgroundColor: 'var(--entry-background-color)' }}>
-                            <h2 className="text-2xl font-bold mb-4">About You</h2>
+                            <h2 className="text-2xl font-bold mb-4"> About the Data</h2>
                             <form onSubmit={handleProfileUpdate} className="space-y-4">
-                                <input type="text" name="fullName" value={profile.fullName} onChange={handleChange} placeholder="Full Name" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
-                                <input type="text" name="uniAffiliation" value={profile.uniAffiliation} onChange={handleChange} placeholder="University Affiliation" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
-                                <input type="text" name="bio" value={profile.bio} onChange={handleChange} placeholder="Short Bio" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
-                                <input type="text" name="twitter" value={profile.twitter} onChange={handleChange} placeholder="Twitter Link" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
-                                <input type="text" name="linkedin" value={profile.linkedin} onChange={handleChange} placeholder="LinkedIn Link" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
-                                <input type="text" name="googleScholar" value={profile.googleScholar} onChange={handleChange} placeholder="Google Scholar Link" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
+                                <input type="text" name="fullName" value={profile.fullName} onChange={handleChange} placeholder="Description" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
+                                <input type="text" name="uniAffiliation" value={profile.uniAffiliation} onChange={handleChange} placeholder="Ownership Limitations" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
+                                <input type="text" name="bio" value={profile.bio} onChange={handleChange} placeholder="Conflict of interest declarations" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
+                                <input type="text" name="twitter" value={profile.twitter} onChange={handleChange} placeholder="Open source or closed source" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
                                 {isLoading ? (
                                     <div className="flex justify-left items-left">
                                         {loadingText}
@@ -211,19 +209,19 @@ const ProfileSetup: React.FC = () => {
                                         type="submit"
                                         className="px-4 py-2 rounded text-white transition-colors duration-200"
                                         style={{
-                                            backgroundColor: 'var(--button-background-color)',
+                                            backgroundColor: 'var(--special-button-color)',
                                             color: 'var(--button-text-color)',
                                             boxShadow: 'var(--button-shadow-color) 0px 2px 4px'
                                         }}
-                                        onMouseOver={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--button-hover-color)'}
-                                        onMouseOut={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--button-background-color)'}
+                                        onMouseOver={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--button-background-color)'}
+                                        onMouseOut={({ currentTarget }) => currentTarget.style.backgroundColor = 'var(--special-button-color)'}
                                     >
-                                        Update Profile Information
+                                        Upload data into VHD Repository
                                     </button>
                                 )}
                             </form>
                         </div>
-                    )}
+                    
                     {profileUpdated && (
                         <>
                             <div className="shadow-lg rounded-lg p-6 mt-4" style={{ backgroundColor: 'var(--entry-background-color)' }}>

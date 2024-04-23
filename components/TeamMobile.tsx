@@ -1,11 +1,8 @@
-// MobileAccordion.js
 import React from 'react';
 import Image from 'next/image';
-import { MemberListProps } from '../types'; // Adjust the path as necessary
+import { MemberListProps } from '../types'; // Ensure this is the correct import path
 
-const MobileAccordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
-    const [isOpen, setIsOpen] = React.useState(false);
-
+const TeamMobile: React.FC<{ post: MemberListProps }> = ({ post }) => {
     return (
         <div className="pb-0">
             <div className="rounded-lg overflow-hidden shadow mx-1 sm:mx-2" style={{
@@ -15,12 +12,19 @@ const MobileAccordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
             }}>
                 <div className="flex flex-col items-center" style={{ maxHeight: '210px', overflowY: 'auto' }}>
                     <div className="w-full" style={{ overflow: 'hidden' }}>
-                        <Image src={post.imgSrc} alt={post.title} width={300} height={300} objectFit="cover" className="rounded-t-lg" layout="responsive" />
+                        <Image 
+                            src={post.imgSrc || '/wizard_4.jpg'} // Fallback to placeholder if imgSrc is falsy
+                            alt={post.title} 
+                            width={300} 
+                            height={300} 
+                            objectFit="cover" 
+                            className="rounded-t-lg" 
+                            layout="responsive" 
+                        />
                     </div>
                     <div className="flex-grow px-2 py-2 text-center" style={{ maxHeight: '110px' }}>
                         <div className="text-sm mb-2" style={{ color: 'var(--secondary-text-color)', fontSize: '0.7rem', lineHeight: '1.0' }}>{post.affiliation}</div>
                         <h3 className="font-bold" style={{ color: 'var(--text-color)', fontSize: '0.9rem', lineHeight: '1.1' }}>{post.title}</h3>
-                        {/* Additional content can be uncommented or added here */}
                     </div>
                 </div>
             </div>
@@ -28,4 +32,4 @@ const MobileAccordion: React.FC<{ post: MemberListProps }> = ({ post }) => {
     );
 };
 
-export default MobileAccordion;
+export default TeamMobile;
