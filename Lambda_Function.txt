@@ -102,3 +102,85 @@ export const handler = async (event) => {
         };
     }
 };
+
+
+
+Currently Functional!
+
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb';
+
+const dbClient = new DynamoDBClient();
+const docClient = DynamoDBDocumentClient.from(dbClient);
+
+export const handler = async (event) => {
+    console.log("Received event:", event); // Detailed log of the incoming event
+
+    let requestBody;
+    try {
+        requestBody = JSON.parse(event.body);
+        console.log("Parsed request body:", requestBody); // Detailed log of the parsed body
+    } catch (error) {
+        console.error("Error parsing request body:", error);
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Invalid or missing body" })
+        };
+    }
+
+    const {
+        userId,
+        fullName,
+        uniAffiliation,
+        bio,
+        twitter,
+        linkedin,
+        googleScholar,
+        uploadKey // Key for constructing the imageUrl
+    } = requestBody;
+
+    // Check if the uploadKey is provided
+    if (!uploadKey) {
+        console.error("Upload key is missing, cannot construct image URL.");
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Missing upload key for image URL construction" })
+        };
+    }
+
+    const imageUrl = `https://memberprofilepictures.s3.amazonaws.com/${uploadKey}`;
+    console.log("Constructed imageUrl:", imageUrl); // Log the constructed image URL
+
+    const params = {
+        TableName: "UserProfile",
+        Item: {
+            userId,
+            fullName,
+            uniAffiliation,
+            bio,
+            twitter,
+            linkedin,
+            googleScholar,
+            imageUrl,
+            updatedAt: new Date().toISOString()
+        }
+    };
+
+    try {
+        await docClient.send(new PutCommand(params));
+        console.log("Successfully updated item in DynamoDB:", params.Item);
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ 
+                message: "Profile successfully updated",
+                data: params.Item
+            })
+        };
+    } catch (dbError) {
+        console.error("Error while updating item in DynamoDB:", dbError);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: "Failed to update profile in DynamoDB", error: dbError.toString() })
+        };
+    }
+};

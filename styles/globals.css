@@ -61,11 +61,11 @@ body {
   --text-color: #f0f0f0;
   --secondary-text-color: #898989;
   --small-font-size: 14px;
-  --button-background-color: #303ae8;
+  --button-background-color: #374a63f1;
   /* Blue for dark mode */
   --button-text-color: #ffffff;
   --button-shadow-color: rgba(0, 0, 0, 0.2);
-  --button-hover-color: #d22a2a;
+  --button-hover-color: #654343;
   /* Slightly darker blue on hover */
   --accent-text-color: #73d9a4;
 }
@@ -79,11 +79,11 @@ body {
   --text-color: #212121;
   --secondary-text-color: #575757;
   --small-font-size: 14px;
-  --button-background-color: #0a13ce;
+  --button-background-color: #9db0d1;
   /* Lighter blue for light mode */
-  --button-text-color: #ffffff;
+  --button-text-color: #060606;
   --button-shadow-color: rgba(0, 0, 0, 0.1);
-  --button-hover-color: #d22a2a;
+  --button-hover-color: #654343;
   /* Slightly darker blue on hover */
   --accent-text-color: #01ae4c;
 }

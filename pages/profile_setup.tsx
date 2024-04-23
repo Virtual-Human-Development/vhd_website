@@ -29,7 +29,7 @@ const ProfileSetup: React.FC = () => {
     const [profileUpdated, setProfileUpdated] = useState(false);
     const [profile, setProfile] = useState({
         fullName: '',
-        universityAffiliation: '',
+        uniAffiliation: '',
         bio: '',
         twitter: '',
         linkedin: '',
@@ -59,20 +59,26 @@ const ProfileSetup: React.FC = () => {
             alert('Please select a file to upload.');
             return;
         }
-
+    
         setIsLoading(true);
         try {
             const presignedUrlResponse = await fetch('api/generatePresignedURL');
             if (!presignedUrlResponse.ok) throw new Error('Failed to fetch the presigned URL.');
             const { url, key } = await presignedUrlResponse.json();
-
+    
+            console.log("Presigned URL and Key:", url, key); // Added logging
+    
+            if (!key) {
+                throw new Error("Received undefined key from presigned URL response");
+            }
+    
             const uploadResponse = await fetch(url, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'image/jpeg' },
                 body: file,
             });
             setIsLoading(false);
-
+    
             if (uploadResponse.ok) {
                 setIsPictureUploaded(true);
                 setUploadedImageUrl(`https://memberprofilepictures.s3.amazonaws.com/${key}`);
@@ -85,16 +91,23 @@ const ProfileSetup: React.FC = () => {
             setIsLoading(false);
         }
     };
-
+    
     const handleProfileUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsLoading(true);
+        if (!uploadKey) {
+            alert("Image key is missing, please upload the image again.");
+            setIsLoading(false);
+            return;
+        }
         const updateData = {
             userId: user.id,
             ...profile,
             uploadKey
         };
-
+    
+        console.log("Sending Update Data:", updateData); // Added logging
+    
         try {
             const response = await fetch('https://7vt7lwfp4llwp6bcsgtdnzon4e0mlmnh.lambda-url.us-east-2.on.aws/', {
                 method: 'POST',
@@ -163,7 +176,7 @@ const ProfileSetup: React.FC = () => {
                             <h2 className="text-2xl font-bold mb-4">About You</h2>
                             <form onSubmit={handleProfileUpdate} className="space-y-4">
                                 <input type="text" name="fullName" value={profile.fullName} onChange={handleChange} placeholder="Full Name" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
-                                <input type="text" name="universityAffiliation" value={profile.universityAffiliation} onChange={handleChange} placeholder="University Affiliation" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
+                                <input type="text" name="uniAffiliation" value={profile.uniAffiliation} onChange={handleChange} placeholder="University Affiliation" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
                                 <input type="text" name="bio" value={profile.bio} onChange={handleChange} placeholder="Short Bio" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
                                 <input type="text" name="twitter" value={profile.twitter} onChange={handleChange} placeholder="Twitter Link" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
                                 <input type="text" name="linkedin" value={profile.linkedin} onChange={handleChange} placeholder="LinkedIn Link" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2" />
@@ -197,7 +210,7 @@ const ProfileSetup: React.FC = () => {
                                 <p className="pb-10"> Uploaded successfully. </p>
                                 <ul className="list-disc pl-5">
                                     <li>Full Name: <strong>{profile.fullName}</strong></li>
-                                    <li>University Affiliation: <strong>{profile.universityAffiliation}</strong></li>
+                                    <li>University Affiliation: <strong>{profile.uniAffiliation}</strong></li>
                                     <li>Bio: <strong>{profile.bio}</strong></li>
                                     <li>Twitter: <strong>{profile.twitter}</strong></li>
                                     <li>LinkedIn: <strong>{profile.linkedin}</strong></li>
