@@ -3,7 +3,7 @@ import { authMiddleware } from "@clerk/nextjs";
 // See https://clerk.com/docs/references/nextjs/auth-middleware
 
 export default authMiddleware({
-  publicRoutes: ["/", "/team", "/sponsorship", "/events", "/blog", "/about"],
+  publicRoutes: ["/", "/team", "/sponsorship", "/events", "/blog", "/about", "/white_paper"],
 });
 
 export const config = {

@@ -39,7 +39,7 @@ const Accordion: React.FC<{ post: BlogPostProps }> = ({ post }) => {
                     </div>
                 </div>
                 {isOpen && (
-                    <div className="p-4" style={{ color: 'var(--secondary-text-color)' }}>{post.content}</div>
+                    <div className="p-4" style={{ color: 'var(--secondary-text-color)' }} dangerouslySetInnerHTML={{ __html: post.content }} />
                 )}
             </div>
         </div>

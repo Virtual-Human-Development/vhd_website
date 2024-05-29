@@ -35,10 +35,10 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            The next generation of human developmental models.
+                            A collection of research talk summaries, short member essays, and development updates.
                         </h2>
                         <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Leveraging a high-impact community with decades of modeling experience.
+                            If you&#39;re interested in contributing, reach out.
                         </p>
                     </div>
                     <Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
