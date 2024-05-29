@@ -1,6 +1,7 @@
 // pages/api/getAllProfiles.js
-import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb";
-import { unmarshall } from "@aws-sdk/util-dynamodb";
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient, GetCommand } from '@aws-sdk/lib-dynamodb';
+import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 
 const client = new DynamoDBClient({ region: process.env.AWS_REGION });
 
