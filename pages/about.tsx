@@ -33,7 +33,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            A consortium of academics in mathematical biology.
+                            We represent a cosortium of mathematical biologists.
                         </h2>
                         <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
                             Working together toward increasingly integrated, capable simulations of the entire human developmental process.
