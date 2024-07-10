@@ -45,10 +45,10 @@ export default function EventsPage() {
                             Events shown here!
                         </h2>
                         <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                             Bringing together world-class mathematical biologists under on roof for events. 
+                            Bringing together world-class mathematical biologists under one roof for events.
                         </p>
                     </div>
-                    <Image src="/consortium.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
+                    <Image src="/events_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                 </div>
             </main>
 
@@ -62,7 +62,7 @@ export default function EventsPage() {
                     </h2>
                     <Events eventPost={getEventsByStatus(status)} />
                 </main>
-            ))} 
+            ))}
 
 
             <Footer />

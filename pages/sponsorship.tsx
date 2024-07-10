@@ -42,13 +42,13 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            Join our community and make a difference.
+                            Thank you for your support.
                         </h2>
                         <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Join our consortium to make a positive impact in your industry. Connect with like-minded professionals and stay up-to-date on industry developments.
+                            The stem cell network supported all our members and made it possible to for everyone to meet at our 1st workshop in Vancouver (Oct 5-6 2022) and 2nd workshop in Toronto (Oct 25-26 2022).
                         </p>
                     </div>
-                    <Image src="/tree_iceberg.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
+                    <Image src="/stem_cell_network.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                 </div>
             </main>
 
@@ -56,13 +56,13 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            The next generation of human developmental models.
+                            Thank you for your support!
                         </h2>
                         <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Leveraging a high-impact community with decades of modeling experience.
+                            Medicine by Design helped us share this initiative by sponsoring our website.
                         </p>
                     </div>
-                    <Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
+                    <Image src="/medicine_by_design.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                 </div>
             </main>
 

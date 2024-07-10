@@ -39,7 +39,7 @@ export default function Home() {
                             Working together toward increasingly integrated, capable simulations of the entire human developmental process.
                         </p>
                     </div>
-                    <Image src="/consortium.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
+                    <Image src="/consortium_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                 </div>
             </main>
 

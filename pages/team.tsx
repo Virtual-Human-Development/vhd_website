@@ -49,7 +49,7 @@ export default function Home() {
                             Co-founded by Drs. Maria Abou Chakra, Nozomu Yachie, and Nika Shakiba, who act as the Founding Directors of the consortium. Under their leadership, the consortium now consists of over 40 world leading scientists and their teams, bridging experimentalists and theoreticians. The consortium strategically intersects experts and technologies from divergent disciplines to drive robust experiment-to-theory research cycles. The consortium leverages expertise in stem cells and developmental biology, stem cell bioengineering, synthetic biology, systems biology, evolutionary biology, bioinformatics, machine learning, mathematical biology. We are also actively recruiting in the area of bioethics.
                         </p>
                     </div>
-                    <Image src="/consortium.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
+                    <Image src="/scientist_team.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
                 </div>
             </main>
 
@@ -62,7 +62,7 @@ export default function Home() {
                     </h2>
                     <Team memberList={getMembersByGroup(groupName)} />
                 </main>
-                    ))}     
+            ))}
 
 
             <Footer />
