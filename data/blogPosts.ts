@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
             <p style="text-indent: 2rem;">The basic anatomical features, such as the body plan, are highly conserved. No new body plans have evolved since the Cambrian explosion, indicating a significant evolutionary constraint. This stability is reflected in the consistent use of the same anatomical structures across diverse species.</p>
             <p style="text-indent: 2rem;">In conclusion, the conservation of the body plan in evolutionary biology is a complex interplay of negative selection, pleiotropic constraints, and phenotypic robustness. These factors contribute to the stability of developmental systems, ultimately limiting evolutionary diversification. The repeated use of genes and the conservation of basic anatomical features further underscore the intricate balance between stability and diversity in evolutionary processes.</p>
         `,
-        imgSrc: "/noaki_irie_evolution_embryo.webp",
+        imgSrc: "/noaki_irie.webp",
         date: "July 1, 2023"
     },
     {
@@ -99,7 +99,7 @@ export const blogPosts: BlogPost[] = [
             <h3 style="font-size: 1.5rem; color: var(--text-color); margin-top: 2rem;">Future Steps</h3>
             <p style="text-indent: 2rem;">Use this data to inform agent-based models. Reprogramming fibroblasts to NPCs and forming neurospheres suggests a mutable landscape that is changing in time. Understanding these dynamics aids in deciphering the complexity of cellular differentiation and disease progression.</p>
         `,
-        imgSrc: "/morgan_david_waddington.webp",
+        imgSrc: "/morgan_david.webp",
         date: "Feb 22, 2023"
     },
     {
