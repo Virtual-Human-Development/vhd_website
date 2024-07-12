@@ -30,28 +30,13 @@ export default function EventsPage() {
             <Navbar />
 
 
-            <header className="text-center pt-20 pb-16" style={{ color: 'var(--text-color)' }}>
+            <header className="text-center pt-20 pb-8" style={{ color: 'var(--text-color)' }}>
                 <div className="max-w-2xl mx-auto px-4">
                     <h1 className="text-4xl font-bold" style={{ color: 'var(--text-color)' }}>
                         EVENTS
                     </h1>
                 </div>
             </header>
-
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h2 className="text-lg font-bold" style={{ color: 'var(--text-color)' }}>
-                            Events shown here!
-                        </h2>
-                        <p className="text-md mt-4" style={{ color: 'var(--secondary-text-color)' }}>
-                            Bringing together world-class mathematical biologists under one roof for events.
-                        </p>
-                    </div>
-                    <Image src="/events_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
-                </div>
-            </main>
-
 
 
             {/* Loop through each event group and render Events component for each */}

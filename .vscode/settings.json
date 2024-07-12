@@ -1,0 +1,5 @@
+{
+  "editor.tabSize": 2, // Sets the tab size to 2 spaces
+  "editor.insertSpaces": false, // Converts tabs to spaces
+  "editor.detectIndentation": false // Ensures the editor uses the defined tab size and not the file content
+}
