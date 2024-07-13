@@ -40,15 +40,11 @@ export default function Home() {
 
 					{/* Right Column */}
 					<div className="md:col-span-4 flex justify-start">
-						<Image src="/team_2.png" alt="Placeholder" width={1000} height={100} className="rounded-lg shadow-lg" />
+						<Image src="/team_2.png" alt="Placeholder" width={1000} height={1000} className="rounded-lg shadow-lg" />
 					</div>
 				</div>
 			</main>
 
-			{/* Divider Line */}
-			<div className="w-full">
-				<div className="max-w-6xl mx-auto h-px bg-white my-12"></div>
-			</div>
 
 			{/* Section 2: 2/2 columns */}
 			<main className="max-w-6xl mx-auto sm:px-6 lg:px-8 py-6">
@@ -59,7 +55,7 @@ export default function Home() {
 
 					{/* Center Column */}
 					<div className="col-span-8">
-						<p className="text-sm mb-8" style={{ color: 'var(--secondary-text-color)' }}>
+						<p className="text-sm mb-8 mt-8" style={{ color: 'var(--secondary-text-color)' }}>
 							Co-founded by Drs.<span className="pl-1" style={{ color: 'var(--text-color)' }}>Maria Abou Chakra, Nozomu Yachie, and Nika Shakiba, </span>
 							who act as the Founding Directors of the consortium.
 							Under their leadership, the consortium now consists of over 40 world leading scientists and their teams, bridging
@@ -75,9 +71,6 @@ export default function Home() {
 
 				</div>
 			</main>
-
-
-
 
 			{groups.map(groupName => (
 				<main key={groupName} className="max-w-4xl mx-auto pt-10 px-4 sm:px-6 lg:px-8 py-12">

@@ -22,27 +22,24 @@ export default function Home() {
       <Navbar />
 
       {/* Section 1: 5/5 columns */}
-      <main className="max-w-6xl mx-auto px-4 pt-36 sm:px-6 lg:px-8">
+      <main className="max-w-6xl mx-auto px-4 pt-20 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
 
           {/* Left Column */}
-          <div className="md:col-span-1 flex items-end justify-start">
+          <div className="md:col-span-2 flex items-end justify-start">
             <h2 className="text-5xl font-bold text-right" style={{ color: 'var(--text-color)' }}>
-              ABOUT VHD
+              About VHD
             </h2>
           </div>
 
-          {/* Right Column */}
-          <div className="md:col-span-4 flex justify-start">
-            <Image src="/about_v_wide.png" alt="Placeholder" width={800} height={800} className="rounded-lg shadow-lg" />
-          </div>
+        </div>
+
+        {/* Row for the wide image */}
+        <div className="mt-8 flex justify-center">
+          <Image src="/vhd_about_banner.png" alt="Wide Image" width={1200} height={400} className="rounded-lg shadow-lg" />
         </div>
       </main>
 
-      {/* Divider Line */}
-      <div className="w-full">
-        <div className="max-w-6xl mx-auto h-px bg-white my-12"></div>
-      </div>
 
       {/* Section 2: 2/2 columns */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -105,7 +102,7 @@ export default function Home() {
                 Posterity:
               </span>
               We believe in the importance of training and guiding the next generation of innovators who will build on and expand our
-              consortium's progress in developing a human embryo simulator. To do this, we will embed trainees in our governance structure and
+              consortium&apos;s progress in developing a human embryo simulator. To do this, we will embed trainees in our governance structure and
               dedicate resources to ensure they are well-supported and trained in professional and technical skills.
             </p>
           </div>
