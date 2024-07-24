@@ -11,19 +11,27 @@ export type EventPost = {
 
 export const eventPost: EventPost[] = [
 
-    // Upcoming Events Here. Give them id: 1
+    // Upcoming Events Here. Give them id: 1 and label them as "future"
 
-    {
-        id: 1,
-        title: "VHD at ISSCR ",
-        content: "This workshop will discuss recent progress and advances in reconstructing human development processes utilizing advanced organoid models, mathematical systems, and synthetic systems. It will also highlight the strengths of collaborations from VHD members by showcasing work focused on understanding early embryo development and steps towards creating a model from ongoing team projects.",
-        imgSrc: "/isscr_2024.png",
-        date: "July 12, 2024",
-        past_or_future: "future"
-    },
+		{
+			id: 1,
+			title: "More VHD Events in the Works..",
+			content: "We are always looking forward to future opportunities to engage with the community and share our groundbreaking research. Stay tuned for announcements on upcoming symposiums, workshops, and conferences where we will showcase the latest advancements in human development simulation. Our events will continue to bring together leading experts from various fields, fostering collaboration and innovation. Be sure to check back frequently for updates on how you can participate in our future endeavors and contribute to the exciting journey of understanding human development.",
+			imgSrc: "/future_imagined_event.png",
+			date: "July 12, 2024",
+			past_or_future: "future"
+	},
 
-    // Past Events Down Here Please. Give them id: 2. 
+    // Past Events Down Here Please. Give them id: 2 and label them as "past"
 
+			{
+				id: 2,
+				title: "VHD at ISSCR ",
+				content: "This workshop will discuss recent progress and advances in reconstructing human development processes utilizing advanced organoid models, mathematical systems, and synthetic systems. It will also highlight the strengths of collaborations from VHD members by showcasing work focused on understanding early embryo development and steps towards creating a model from ongoing team projects.",
+				imgSrc: "/isscr_2024.png",
+				date: "July 12, 2024",
+				past_or_future: "past"
+		},
 
     {
         id: 2,

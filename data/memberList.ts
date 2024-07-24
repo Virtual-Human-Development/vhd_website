@@ -75,7 +75,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Adam L. MacLean",
-        imgSrc: "",
+        imgSrc: "/member_pics/Adam-L-MacLean.webp",
         affiliation: "University of Southern California",
         group: "Core Team Members, Theoretical",
     },
@@ -83,7 +83,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Alexander Fletcher",
-        imgSrc: "",
+        imgSrc: "/member_pics/alexander-fletcher-1.webp",
         affiliation: "University of Sheffield",
         group: "Core Team Members, Theoretical",
     },
@@ -91,7 +91,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Alexandria Volkening",
-        imgSrc: "",
+        imgSrc: "/member_pics/AlexandriaVolkening.webp",
         affiliation: "Purdue University",
         group: "Core Team Members, Theoretical",
     },
@@ -99,7 +99,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Berta Verd",
-        imgSrc: "",
+        imgSrc: "/member_pics/berta-verd.webp",
         affiliation: "University of Oxford",
         group: "Core Team Members, Theoretical",
     },
@@ -107,7 +107,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Dagmar Iber",
-        imgSrc: "",
+        imgSrc: "/member_pics/dagmar-iber-1.webp",
         affiliation: "ETH Zurich",
         group: "Core Team Members, Theoretical",
     },
@@ -115,7 +115,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Daniel Aguilar-Hidalgo",
-        imgSrc: "",
+        imgSrc: "/member_pics/daniel-aguilar-hidalgo-1.webp",
         affiliation: "University of British Columbia",
         group: "Core Team Members, Theoretical",
     },
@@ -123,7 +123,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Geoffrey Schiebinger",
-        imgSrc: "",
+        imgSrc: "/member_pics/geoffrey-schiebinger-1.webp",
         affiliation: "University of British Columbia",
         group: "Core Team Members, Theoretical",
     },
@@ -131,7 +131,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Gonca Erdemci-Tandogan",
-        imgSrc: "",
+        imgSrc: "/member_pics/gonca_erdemci-tandogan.webp",
         affiliation: "University of Western Ontario",
         group: "Core Team Members, Theoretical",
     },
@@ -139,7 +139,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Linus Schumacher",
-        imgSrc: "",
+        imgSrc: "/member_pics/linus-schumacher-1.webp",
         affiliation: "University of Edinburgh",
         group: "Core Team Members, Theoretical",
     },
@@ -147,7 +147,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Lutz Brusch",
-        imgSrc: "",
+        imgSrc: "/member_pics/lutz-brusch-1.webp",
         affiliation: "Technische Universität Dresden",
         group: "Core Team Members, Theoretical",
     },
@@ -155,7 +155,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Maria Abou Chakra",
-        imgSrc: "",
+        imgSrc: "/member_pics/maria-abou-chakra.webp",
         affiliation: "University of Toronto",
         group: "Core Team Members, Theoretical",
     },
@@ -163,7 +163,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Morgan Craig",
-        imgSrc: "",
+        imgSrc: "/member_pics/morgan-craig-1.webp",
         affiliation: "University of Montreal",
         group: "Core Team Members, Theoretical",
     },
@@ -171,7 +171,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Noemi Picco",
-        imgSrc: "",
+        imgSrc: "/member_pics/noemi-picco-1.webp",
         affiliation: "Swansea University",
         group: "Core Team Members, Theoretical",
     },
@@ -179,7 +179,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Ruben Perez-Carrasco",
-        imgSrc: "",
+        imgSrc: "/member_pics/ruben-perez-carrasco-1.webp",
         affiliation: "University College London",
         group: "Core Team Members, Theoretical",
     },
@@ -187,7 +187,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Ruth Baker",
-        imgSrc: "",
+        imgSrc: "/member_pics/ruth-baker-1.webp",
         affiliation: "University of Oxford",
         group: "Core Team Members, Theoretical",
     },
@@ -195,7 +195,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "Sidhartha Goyal",
-        imgSrc: "",
+        imgSrc: "/member_pics/goyal-sidhartha.webp",
         affiliation: "University of Toronto",
         group: "Core Team Members, Theoretical",
     },
@@ -203,7 +203,7 @@ export const memberList: MemberList[] = [
     {
         id: 2,
         title: "T.J. Sego",
-        imgSrc: "",
+        imgSrc: "/member_pics/TJ_Sego.webp",
         affiliation: "University of Florida",
         group: "Core Team Members, Theoretical",
     },
@@ -214,7 +214,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Amy Wong",
-        imgSrc: "",
+        imgSrc: "/member_pics/amy-wong-1.webp",
         affiliation: "Sickkids Children's Hospital",
         group: "Core Team Members, Experimental",
     },
@@ -222,7 +222,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Arvind Mer",
-        imgSrc: "",
+        imgSrc: "/member_pics/arvind-mer.webp",
         affiliation: "University of Ottawa",
         group: "Core Team Members, Experimental",
     },
@@ -230,7 +230,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Carl de Boer",
-        imgSrc: "",
+        imgSrc: "/member_pics/carl-de-boer-1.webp",
         affiliation: "University of British Columbia",
         group: "Core Team Members, Experimental",
     },
@@ -238,7 +238,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Daniel Coutu",
-        imgSrc: "",
+        imgSrc: "/member_pics/daniel_coutu-1-scaled.webp",
         affiliation: "Ottawa Hospital Research Institute",
         group: "Core Team Members, Experimental",
     },
@@ -246,7 +246,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "David Jorg Hans Fraser Knapp",
-        imgSrc: "",
+        imgSrc: "/member_pics/david_knapp-1-scaled.webp",
         affiliation: "",
         group: "Core Team Members, Experimental",
     },
@@ -254,7 +254,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Guillaume Blin",
-        imgSrc: "",
+        imgSrc: "/member_pics/guillaume-blin-1.webp",
         affiliation: "University of Edinburgh",
         group: "Core Team Members, Experimental",
     },
@@ -262,7 +262,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Ivana Barbaric",
-        imgSrc: "",
+        imgSrc: "/member_pics/ivana-barbaric-1.webp",
         affiliation: "University of Sheffield",
         group: "Core Team Members, Experimental",
     },
@@ -270,7 +270,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Jun Wu",
-        imgSrc: "",
+        imgSrc: "/member_pics/jun-wu-1.webp",
         affiliation: "UT Southwestern Medical Center",
         group: "Core Team Members, Experimental",
     },
@@ -278,7 +278,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Katie Galloway",
-        imgSrc: "",
+        imgSrc: "/member_pics/katie-galloway-1.webp",
         affiliation: "Massachusetts Institute of Technology",
         group: "Core Team Members, Experimental",
     },
@@ -286,7 +286,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Knut Woltjen",
-        imgSrc: "",
+        imgSrc: "/member_pics/knut-woltjen.webp",
         affiliation: "Kyoto University",
         group: "Core Team Members, Experimental",
     },
@@ -294,7 +294,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Laurent David",
-        imgSrc: "",
+        imgSrc: "/member_pics/laurent-david-1.webp",
         affiliation: "Université de Nantes",
         group: "Core Team Members, Experimental",
     },
@@ -302,7 +302,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Leonardo Morsut",
-        imgSrc: "",
+        imgSrc: "/member_pics/leonardo-morsut-1.webp",
         affiliation: "University of Southern California",
         group: "Core Team Members, Experimental",
     },
@@ -310,7 +310,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Miki Ebisuya",
-        imgSrc: "",
+        imgSrc: "/member_pics/miki-ebisuya-1.webp",
         affiliation: "EMBL",
         group: "Core Team Members, Experimental",
     },
@@ -318,7 +318,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Mo R. Ebrahimkhani",
-        imgSrc: "",
+        imgSrc: "/member_pics/mo_ebrahimkhani.webp",
         affiliation: "University of Pittsburgh",
         group: "Core Team Members, Experimental",
     },
@@ -326,7 +326,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Naoki Irie",
-        imgSrc: "",
+        imgSrc: "/member_pics/naoki-irie-1.webp",
         affiliation: "SOKENDAI",
         group: "Core Team Members, Experimental",
     },
@@ -334,7 +334,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Nika Shakiba",
-        imgSrc: "",
+        imgSrc: "/member_pics/nika-shakiba.webp",
         affiliation: "University of British Columbia",
         group: "Core Team Members, Experimental",
     },
@@ -342,7 +342,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Nozomu Yachie",
-        imgSrc: "",
+        imgSrc: "/member_pics/nozomu-yachie-1.webp",
         affiliation: "University of British Columbia",
         group: "Core Team Members, Experimental",
     },
@@ -350,7 +350,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Sadao Ota",
-        imgSrc: "",
+        imgSrc: "/member_pics/sadao-ota-1.webp",
         affiliation: "University of Tokyo",
         group: "Core Team Members, Experimental",
     },
@@ -358,7 +358,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Samer Hussein",
-        imgSrc: "",
+        imgSrc: "/member_pics/samer_hussein2.webp",
         affiliation: "Laval University",
         group: "Core Team Members, Experimental",
     },
@@ -366,7 +366,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Satoru Okuda",
-        imgSrc: "",
+        imgSrc: "/member_pics/satoru_okuda.webp",
         affiliation: "Kanazawa University",
         group: "Core Team Members, Experimental",
     },
@@ -374,7 +374,7 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Takanori Takebe",
-        imgSrc: "",
+        imgSrc: "/member_pics/takanori-takebe.webp",
         affiliation: "University of Cincinnati",
         group: "Core Team Members, Experimental",
     },
@@ -382,19 +382,19 @@ export const memberList: MemberList[] = [
     {
         id: 3,
         title: "Vincent Pasque",
-        imgSrc: "",
+        imgSrc: "/member_pics/vincent-pasque.webp",
         affiliation: "University of Leuven",
         group: "Core Team Members, Experimental",
     },
 
 
 
-    // Trainee List
+    // Trainee Council
 
     {
         id: 4,
         title: "Matthieu Heitz",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/matthieu-heitz-1.webp",
         affiliation: "University of British Columbia",
         group: "Trainee Council",
     },
@@ -402,7 +402,7 @@ export const memberList: MemberList[] = [
     {
         id: 4,
         title: "Yeganeh Dorri Nokoorani",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/yeganeh-dorri-nokoorani.webp",
         affiliation: "University of British Columbia",
         group: "Trainee Council",
     },
@@ -410,7 +410,7 @@ export const memberList: MemberList[] = [
     {
         id: 4,
         title: "Harry Chun Man Cheng",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/harry-chun-man_cheng-shakiba-1.webp",
         affiliation: "University of British Columbia",
         group: "Trainee Council",
     },
@@ -418,7 +418,7 @@ export const memberList: MemberList[] = [
     {
         id: 4,
         title: "Mia Brunetti",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/mia-brunetti.webp",
         affiliation: "University of Montreal",
         group: "Trainee Council",
     },
@@ -430,7 +430,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Henry Tat Quach",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/henry-tat-quach.webp",
         affiliation: "",
         group: "Trainee Members",
     },
@@ -438,7 +438,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Joshua Jamie Hislop",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/joshua-jamie-hislop.webp",
         affiliation: "University of Pittsburgh",
         group: "Trainee Members",
     },
@@ -446,7 +446,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Kamyar Keshavarz",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/kamyar-keshavarz.webp",
         affiliation: "N/A",
         group: "Trainee Members",
     },
@@ -454,7 +454,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Victoire Fort",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/victoire-fort-1.webp",
         affiliation: "N/A",
         group: "Trainee Members",
     },
@@ -462,7 +462,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Gabriel Martínez-Gálvez",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/gabriel-martinez-galvez.webp",
         affiliation: "N/A",
         group: "Trainee Members",
     },
@@ -470,7 +470,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Ali Shahdoost",
-        imgSrc: "",
+        imgSrc: "/member_pics/stand_in.jpg",
         affiliation: "University of British Columbia",
         group: "Trainee Members",
     },
@@ -478,7 +478,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Arman Adel",
-        imgSrc: "",
+        imgSrc: "/member_pics/stand_in.jpg",
         affiliation: "University of British Columbia",
         group: "Trainee Members",
     },
@@ -486,7 +486,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Spencer Farrell",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/spencer_farrell.jpg",
         affiliation: "University of Toronto",
         group: "Trainee Members",
     },
@@ -494,7 +494,7 @@ export const memberList: MemberList[] = [
     {
         id: 5,
         title: "Michael Wu",
-        imgSrc: "",
+        imgSrc: "/member_pics/trainees/michael_wu.webp",
         affiliation: "Sick Kids Toronto",
         group: "Trainee Members",
     },
