@@ -15,38 +15,40 @@ export const eventPost: EventPost[] = [
 
     {
         id: 1,
-        title: "Next meeting of the VHD Consortium",
-        content: "This is the content for the next meeting. Here we share some interesting insights.",
-        imgSrc: "/consortium.jpg",
-        date: "May 2, 2024",
-        past_or_future: "future"
-    },
-    {
-        id: 1,
-        title: "Great consortium get-together.",
-        content: "This is the content for the next meeting. Here we share some interesting insights.",
-        imgSrc: "/wizard_4.jpg",
-        date: "June 8, 2024",
+        title: "VHD at ISSCR ",
+        content: "This workshop will discuss recent progress and advances in reconstructing human development processes utilizing advanced organoid models, mathematical systems, and synthetic systems. It will also highlight the strengths of collaborations from VHD members by showcasing work focused on understanding early embryo development and steps towards creating a model from ongoing team projects.",
+        imgSrc: "/isscr_2024.png",
+        date: "July 12, 2024",
         past_or_future: "future"
     },
 
     // Past Events Down Here Please. Give them id: 2. 
 
+
     {
         id: 2,
-        title: "Second meeting of the VHD Consortium",
-        content: "This was what happened durin the second meeting.  Here we share some interesting insights.",
-        imgSrc: "/bio_eng_img.png",
-        date: "March 14, 2023",
+        title: "VHD ideas and vision open for discussion in the Let’s Talk Science Fiction grades 9-12",
+        content: "Science fiction writers have inspired many real-life technological advances including artificial intelligence, bionic limbs, self-driving vehicles, space travel, cell phones and the internet. Join us as we explore the development of innovative technologies and the intersection between STEM and science fiction. ",
+        imgSrc: "/students_event.png",
+        date: "Feb 29, 2023",
         past_or_future: "past"
     },
 
     {
         id: 2,
-        title: "First meeting of the VHD Consortium",
-        content: "This was what happened durin the first meeting. Here we share some interesting insights.",
-        imgSrc: "/neurons_background.png",
-        date: "Jan 2, 2023",
+        title: "Bridging Theory and Experiments",
+        content: "Brite with Janet Rossant “Stem cell-derived embryo models- how close to reality can they be?”",
+        imgSrc: "/event_3.png",
+        date: "Jan 19, 2023",
+        past_or_future: "past"
+    },
+
+    {
+        id: 2,
+        title: "Virtual Human Development Workshop",
+        content: "This workshop provided the opportunity to exchange ideas among our international experts in the experimental and theoretical fields to help move our project forward and develop a state-of-the-art Virtual Human Simulator. Thanks to the sponsorship of the stem cell network we will host this workshop as an event at TMM2023.",
+        imgSrc: "/event_1.png",
+        date: "Oct 25, 2023",
         past_or_future: "past"
     },
 ];

@@ -9,197 +9,193 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  /* Set the primary font family to Roboto, but you can specify Unna or Roboto Slab for specific elements or classes as needed */
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	/* Set the primary font family to Roboto, but you can specify Unna or Roboto Slab for specific elements or classes as needed */
+	font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: 0.8rem;
+	/* Reduce base font size */
 }
 
 /* You might want to add specific classes for Unna and Roboto Slab or set them for specific elements */
 .unna-font {
-  font-family: 'Unna', serif;
+	font-family: 'Unna', serif;
 }
 
 .roboto-slab-font {
-  font-family: 'Roboto Slab', serif;
+	font-family: 'Roboto Slab', serif;
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
 }
 
 /* Dark theme */
 :root {
-  --background-color: #060606;
-  --entry-background-color: #141414e8;
-  --entry-border-color: #181818;
-  --entry-shadow-color: rgba(173, 173, 173, 0.221);
-  --text-color: #f0f0f0;
-  --secondary-text-color: #898989;
-  --small-font-size: 14px;
-  --button-background-color: #374a63f1;
-  --special-button-color: #226037f1;
-  --alert-button-background-color: #872525;
-  /* Blue for dark mode */
-  --button-text-color: #ffffff;
-  --button-shadow-color: rgba(0, 0, 0, 0.2);
-  --button-hover-color: #654343;
-  /* Slightly darker blue on hover */
-  --accent-text-color: #73d9a4;
+	--background-color: #060606;
+	--entry-background-color: #141414e8;
+	--entry-border-color: #181818;
+	--entry-shadow-color: rgba(173, 173, 173, 0.221);
+	--text-color: #f0f0f0;
+	--secondary-text-color: #898989;
+	--small-font-size: 12px;
+	/* Reduce font size */
+	--button-background-color: #374a63f1;
+	--special-button-color: #226037f1;
+	--alert-button-background-color: #872525;
+	--button-text-color: #ffffff;
+	--button-shadow-color: rgba(0, 0, 0, 0.2);
+	--button-hover-color: #654343;
+	--accent-text-color: #73d9a4;
 }
 
 /* Light theme */
 [data-theme='dark'] {
-  --background-color: #dfdfdf;
-  --entry-background-color: #f7f7f7;
-  --entry-border-color: #e8e8e8;
-  --entry-shadow-color: rgba(207, 207, 207, 0.664);
-  --text-color: #212121;
-  --secondary-text-color: #575757;
-  --small-font-size: 14px;
-  --button-background-color: #9db0d1;
-  --special-button-color: #619954;
-  --alert-button-background-color: #f08686;
-  /* Lighter blue for light mode */
-  --button-text-color: #060606;
-  --button-shadow-color: rgba(0, 0, 0, 0.1);
-  --button-hover-color: #654343;
-  /* Slightly darker blue on hover */
-  --accent-text-color: #01ae4c;
+	--background-color: #dfdfdf;
+	--entry-background-color: #f7f7f7;
+	--entry-border-color: #e8e8e8;
+	--entry-shadow-color: rgba(207, 207, 207, 0.664);
+	--text-color: #212121;
+	--secondary-text-color: #575757;
+	--small-font-size: 12px;
+	/* Reduce font size */
+	--button-background-color: #9db0d1;
+	--special-button-color: #619954;
+	--alert-button-background-color: #f08686;
+	--button-text-color: #060606;
+	--button-shadow-color: rgba(0, 0, 0, 0.1);
+	--button-hover-color: #654343;
+	--accent-text-color: #01ae4c;
 }
-
 
 .header-content,
 .header-content h1 {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
-
-
 .menu-button {
-  width: 35px;
-  height: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  transform: rotate(0deg);
-  transition: 0.7s ease-in-out;
-  border: none;
-  background: transparent;
-  cursor: pointer;
+	width: 35px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transform: rotate(0deg);
+	transition: 0.7s ease-in-out;
+	border: none;
+	background: transparent;
+	cursor: pointer;
 }
 
 .menu-button span,
 .menu-button span::before,
 .menu-button span::after {
-  content: '';
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: var(--text-color);
-  border-radius: 3px;
-  transition: 0.25s ease-in-out;
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 100%;
+	background: var(--text-color);
+	border-radius: 3px;
+	transition: 0.25s ease-in-out;
 }
 
 /* Middle line (use the span itself) */
 .menu-button span {
-  background: var(--text-color);
-  /* Make the middle line visible */
-  transform: rotate(0deg);
-  /* Ensure it starts without rotation */
-  transform: translateX(6px);
+	background: var(--text-color);
+	/* Make the middle line visible */
+	transform: rotate(0deg);
+	/* Ensure it starts without rotation */
+	transform: translateX(6px);
 }
 
 .menu-button span::before {
-  top: -8px;
-  /* Adjust to match your design */
-  transform: translateX(-22px);
+	top: -8px;
+	/* Adjust to match your design */
+	transform: translateX(-22px);
 }
 
 .menu-button span::after {
-  top: 8px;
-  /* Adjust to match your design */
-  transform: translateX(-14px);
+	top: 8px;
+	/* Adjust to match your design */
+	transform: translateX(-14px);
 }
 
 .menu-button.open span {
-  /* Make the middle line disappear or transform */
-  opacity: 0;
-  /* Option 1: Fade out the middle line */
-  /* transform: scale(0); Option 2: Shrink away the middle line */
+	/* Make the middle line disappear or transform */
+	opacity: 0;
+	/* Option 1: Fade out the middle line */
+	/* transform: scale(0); Option 2: Shrink away the middle line */
 }
 
 .menu-button.open span::before,
 .menu-button.open span::after {
-  top: 0;
-  /* Move both lines to the middle */
+	top: 0;
+	/* Move both lines to the middle */
 }
 
 .menu-button.open span {
-  transform: rotate(-75deg);
-  /* Bottom line rotates to form the other half of the "X" */
+	transform: rotate(-75deg);
+	/* Bottom line rotates to form the other half of the "X" */
 }
 
 .menu-button.open span::before {
-  transform: rotate(75deg);
-  /* Top line rotates to form one half of the "X" */
+	transform: rotate(75deg);
+	/* Top line rotates to form one half of the "X" */
 }
 
 .menu-button.open span::after {
-  transform: rotate(-20deg);
-  /* Bottom line rotates to form the other half of the "X" */
+	transform: rotate(-20deg);
+	/* Bottom line rotates to form the other half of the "X" */
 }
 
 .animation-delay-200 {
-  animation-delay: 0.2s;
+	animation-delay: 0.2s;
 }
 
 .animation-delay-400 {
-  animation-delay: 0.4s;
+	animation-delay: 0.4s;
 }
 
 .animation-delay-600 {
-  animation-delay: 0.6s;
+	animation-delay: 0.6s;
 }
 
-
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+	from {
+		opacity: 0;
+	}
 
-  to {
-    opacity: 1;
-  }
+	to {
+		opacity: 1;
+	}
 }
 
 .loading-letter {
-  display: inline-block;
-  opacity: 0;
-  animation: fadeIn 0.1s forwards;
+	display: inline-block;
+	opacity: 0;
+	animation: fadeIn 0.1s forwards;
 }
