@@ -61,6 +61,25 @@ export default function Home() {
 				</div>
 			</main>
 
+			<main className="max-w-3xl mx-auto px-3 sm:px-5 lg:px-6 py-10">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+					<div>
+						<h2 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>
+							VHD Strategic Plan PDF
+						</h2>
+						<p className="text-sm mt-3" style={{ color: 'var(--secondary-text-color)' }}>
+							Click to download the VHD Strategic Plan detailing our plans for the next five years.
+						</p>
+						<a href="/files/VHD-stratPlan-240208.pdf" download>
+							<button className="mt-5 px-3 py-1 bg-blue-900 text-white rounded-lg hover:bg-blue-800">
+								Download PDF
+							</button>
+						</a>
+					</div>
+					<Image src="/wizard_5.jpg" alt="Research Document" width={320} height={320} className="rounded-lg shadow-lg" />
+				</div>
+			</main>
+
 			<main className="py-10" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }}>
 				<div className="max-w-3xl mx-auto px-3 sm:px-5 lg:px-6">
 					<h2 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>Latest Updates from our blog</h2>
