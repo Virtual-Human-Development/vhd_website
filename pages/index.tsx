@@ -52,7 +52,7 @@ export default function Home() {
 							Join our consortium to make a positive impact. Connect with like-minded scientists and stay up-to-date on modeling developments.
 						</p>
 						<Link href="/team">
-							<button className="mt-5 px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+							<button className="mt-5 px-3 py-1 bg-blue-900 text-white rounded-lg hover:bg-blue-800">
 								View all members
 							</button>
 						</Link>
