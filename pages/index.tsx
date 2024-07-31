@@ -76,7 +76,26 @@ export default function Home() {
 							</button>
 						</a>
 					</div>
-					<Image src="/wizard_5.jpg" alt="Research Document" width={320} height={320} className="rounded-lg shadow-lg" />
+					<Image src="/forward_looking_plan.png" alt="Research Document" width={320} height={320} className="rounded-lg shadow-lg" />
+				</div>
+			</main>
+
+			<main className="max-w-3xl mx-auto px-3 sm:px-5 lg:px-6 py-10">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+					<div>
+						<h2 className="text-md font-bold" style={{ color: 'var(--text-color)' }}>
+							Call for Applications
+						</h2>
+						<p className="text-sm mt-3" style={{ color: 'var(--secondary-text-color)' }}>
+							We are excited to announce a call for applications in collaboration with Nature. This is a unique opportunity for researchers to contribute to groundbreaking studies in the field of human development. Click the button below to learn more and apply.
+						</p>
+						<a href="https://www.nature.com/collections/ibgjhfbaaj" target="_blank" rel="noopener noreferrer">
+							<button className="mt-5 px-3 py-1 bg-blue-900 text-white rounded-lg hover:bg-blue-800">
+								Apply Now
+							</button>
+						</a>
+					</div>
+					<Image src="/call_for_apps.png" alt="Call for Applications" width={320} height={320} className="rounded-lg shadow-lg" />
 				</div>
 			</main>
 
