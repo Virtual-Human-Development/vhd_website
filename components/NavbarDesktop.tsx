@@ -77,14 +77,14 @@ const NavbarDesktop = () => {
 								{/* Theme toggle icon */}
 							</button>
 
-							{isSignedIn ? (
+							{/* {isSignedIn ? (
 								<UserButton />
 							) : (
 								// Use an `a` tag or similar element and bind the `openSignIn` method to its click event
 								<a onClick={() => openSignIn()} className="py-2 px-3 cursor-pointer" style={{ color: 'var(--text-color)' }}>
 									Login
 								</a>
-							)}
+							)} */}
 						</div>
 					</div>
 

@@ -40,7 +40,7 @@ export default function Home() {
 
 					{/* Right Column */}
 					<div className="md:col-span-4 flex justify-start">
-						<Image src="/team_2.png" alt="Placeholder" width={1000} height={1000} className="rounded-lg shadow-lg" />
+						<Image src="/vhd_founders.jpg" alt="Placeholder" width={1000} height={1000} className="rounded-lg shadow-lg" />
 					</div>
 				</div>
 			</main>

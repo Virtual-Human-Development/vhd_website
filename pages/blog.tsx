@@ -38,7 +38,7 @@ export default function Home() {
 							An original collection of research talks, theses, member essays, and Virtual Human Development updates.
 						</h2>
 					</div>
-					<Image src="/VHD_banner_2.jpg" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
+					<Image src="/VHD_banner_2.png" alt="Placeholder" width={400} height={400} className="rounded-lg shadow-lg" />
 				</div>
 			</main>
 
