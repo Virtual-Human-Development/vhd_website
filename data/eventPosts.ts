@@ -55,7 +55,7 @@ export const eventPost: EventPost[] = [
         id: 2,
         title: "Virtual Human Development Workshop",
         content: "This workshop provided the opportunity to exchange ideas among our international experts in the experimental and theoretical fields to help move our project forward and develop a state-of-the-art Virtual Human Simulator. Thanks to the sponsorship of the stem cell network we will host this workshop as an event at TMM2023.",
-        imgSrc: "/event_1.png",
+        imgSrc: "/event_01.png",
         date: "Oct 25, 2023",
         past_or_future: "past"
     },
