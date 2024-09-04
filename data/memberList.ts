@@ -68,7 +68,13 @@ export const memberList: MemberList[] = [
 			affiliation: "Caltech",
 			group: "Advisory Board",
 	},
-
+	{
+			id: 1,
+			title: "Steven ten Holder",
+			imgSrc: "/member_pics/steven-tenholder.webp",
+			affiliation: "Waterloo",
+			group: "Advisory Board",
+	},
 
 
 	// Core Team Members, Theoretical
