@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           {/* Social Media Links */}
-          <Link href="https://twitter.com/virtualhumandevelopment">
+          <Link href="https://twitter.com/VHD_Consortium">
             <div className="cursor-pointer">
               <Image src={theme === 'light' ? "/icons/twitter-w.png" : "/icons/twitter-b.png"} alt="Twitter" width={24} height={24} />
             </div>
