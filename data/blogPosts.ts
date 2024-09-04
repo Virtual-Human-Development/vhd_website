@@ -1,4 +1,5 @@
 // data/blogPosts.ts
+// Instructions 
 
 export type BlogPost = {
     id: number;
@@ -89,6 +90,22 @@ export const blogPosts: BlogPost[] = [
         `,
         imgSrc: "/miki_james_somite_development.webp",
         date: "January 19, 2023"
+    },
+    {
+        id: 6,
+        title: "This is the new blog post! ",
+        subtitle: "Naoki Irie: A research talk summary on the relationship between evolution and embryology.",
+				content: `
+				<p style="text-indent: 2rem;">A robust and stable phenotype can limit evolutionary diversification, similar to how invariant flora exhibit limited diversity. This observation raises the question: why is the body plan conserved? Early stages of development were prone to lethality, acting as a negative selection pressure that conserved the body plan. The more prone early stages are to lethality, the stronger this conservation pressure. This body plan conservation was observed without the presence of positive selection, suggesting that avoiding negative outcomes may have played a more significant role than any selective advantage.</p>
+				<h3 style="font-size: 1.5rem; color: var(--text-color); margin-top: 2rem;">Stability and Evolution</h3>
+				<p style="text-indent: 2rem;">Pleiotropy, where a single gene affects multiple traits, can act as a constraint. Stages with more pleiotropic genes tend to be more conserved due to the complex interdependencies in their developmental processes. Phenotypic stability can lead to less variation and consequently less diversity. Robust and stable phenotypes could contribute to the long-term conservation of the vertebrate body plan. Less variation inherently means less evolutionary change over time. The stability and robustness of developmental systems contribute to the long-term conservation of body plans, as suggested by Naoki Irie. This conservation could be attributed to various factors, including genetic constraints and developmental robustness.</p>
+				<h3 style="font-size: 1.5rem; color: var(--text-color); margin-top: 2rem;">The Role of Gene Usage and Anatomical Features</h3>
+				<p style="text-indent: 2rem;">The repeated usage of the same genes (co-options) can have a dual effect on phenotypic evolution. While it can facilitate diversification by providing a stable framework for development, it can also constrain diversification by limiting the scope for variation. The basic anatomical features, such as the body plan, are highly conserved. No new body plans have evolved since the Cambrian explosion, indicating a significant evolutionary constraint. This stability is reflected in the consistent use of the same anatomical structures across diverse species.</p>
+				<p style="text-indent: 2rem;">In conclusion, the conservation of the body plan in evolutionary biology is a complex interplay of negative selection, pleiotropic constraints, and phenotypic robustness. These factors contribute to the stability of developmental systems, ultimately limiting evolutionary diversification. The repeated use of genes and the conservation of basic anatomical features further underscore the intricate balance between stability and diversity in evolutionary processes.</p>
+		`,
+		
+        imgSrc: "/noaki_irie.webp",
+        date: "July 1, 2023"
     },
     // Add more blog posts as needed
 ];
