@@ -61,6 +61,7 @@ export default function Home() {
 				</div>
 			</main>
 
+{/*
 			<main className="max-w-3xl mx-auto px-3 sm:px-5 lg:px-6 py-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 					<div>
@@ -78,7 +79,8 @@ export default function Home() {
 					</div>
 					<Image src="/forward_looking_plan.png" alt="Research Document" width={320} height={320} className="rounded-lg shadow-lg" />
 				</div>
-			</main>
+			</main> 
+*/}
 
 			<main className="max-w-3xl mx-auto px-3 sm:px-5 lg:px-6 py-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
