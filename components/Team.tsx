@@ -1,10 +1,10 @@
-// Team.tsx
+// components/Team.tsx
 import React, { useState, useEffect } from 'react';
 import TeamDesktop from './TeamDesktop';
 import TeamMobile from './TeamMobile';
-import { MemberListProps } from '../types';
+import { MemberList } from '../data/memberList';
 
-const Team: React.FC<{ memberList: MemberListProps[] }> = ({ memberList }) => {
+const Team: React.FC<{ memberList: MemberList[] }> = ({ memberList }) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -27,4 +27,3 @@ const Team: React.FC<{ memberList: MemberListProps[] }> = ({ memberList }) => {
 };
 
 export default Team;
-
