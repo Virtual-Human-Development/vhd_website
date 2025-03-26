@@ -34,7 +34,7 @@ export const memberList: MemberList[] = [
         imgSrc: "/member_pics/adriana-dawes.webp",
         affiliation: "Ohio State University",
         group: "Advisory Board",
-        bio: "No additional information found in the biosketches for Adriana Dawes."
+        bio: "Professor at The Ohio State University specializing in mathematical biology, focusing on mathematical modeling of cell polarization, intracellular dynamics, and developmental biology."
     },
     {
         id: 1,
@@ -42,7 +42,9 @@ export const memberList: MemberList[] = [
         imgSrc: "/member_pics/hiroaki-kitano.webp",
         affiliation: "Kyoto University",
         group: "Advisory Board",
-        bio: "No additional information found in the biosketches for Hiroaki Kitano."
+        bio: "Executive at Sony Group Corporation and Director of The Systems Biology Institute, specializing in artificial intelligence, robotics, and systems biology.",
+        twitter: "https://x.com/hkitano",
+        scholar: "https://scholar.google.com/citations?user=027fc-oAAAAJ"
     },
     {
         id: 1,
@@ -60,7 +62,7 @@ export const memberList: MemberList[] = [
         imgSrc: "/member_pics/janet-rossant.webp",
         affiliation: "SickKids Children's Hospital",
         group: "Advisory Board",
-        bio: "No additional information found in the biosketches for Janet Rossant."
+        bio: "Senior Scientist Emeritus at The Hospital for Sick Children and President and Scientific Director of the Gairdner Foundation, renowned for her pioneering research in developmental biology and stem cell research. "
     },
     {
         id: 1,
@@ -77,7 +79,7 @@ export const memberList: MemberList[] = [
         imgSrc: "/member_pics/peter-zandstra.webp",
         affiliation: "University of British Columbia",
         group: "Advisory Board",
-        bio: "No additional information found in the biosketches for Peter Zandstra."
+        bio: "Director of the Michael Smith Laboratories and Founding Director of the School of Biomedical Engineering at the University of British Columbia, specializing in stem cell bioengineering and regenerative medicine."
     },
     {
         id: 1,
@@ -85,7 +87,7 @@ export const memberList: MemberList[] = [
         imgSrc: "/member_pics/magdalena-zernicka-goetz.webp",
         affiliation: "Caltech",
         group: "Advisory Board",
-        bio: "No additional information found in the biosketches for Magdalena Zernicka-Goetz."
+        bio: "Professor of Biology and Biological Engineering at Caltech, recognized for her contributions to developmental biology and embryogenesis.​"
     },
     {
         id: 1,
@@ -134,7 +136,7 @@ export const memberList: MemberList[] = [
         imgSrc: "/member_pics/berta-verd.webp",
         affiliation: "University of Oxford",
         group: "Core Team Members, Theoretical",
-        bio: "No additional information found in the biosketches for Berta Verd."
+        bio: "Researcher at the University of Oxford, focusing on theoretical biology and evolutionary developmental biology."
     },
     {
         id: 2,
