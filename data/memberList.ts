@@ -15,91 +15,118 @@ export type MemberList = {
 };
 
 export const memberList: MemberList[] = [
-    // Advisory Board
-    {
-        id: 1,
-        title: "Gary Bader",
-        imgSrc: "/member_pics/gary-bader.webp",
-        affiliation: "University of Toronto",
-        group: "Advisory Board",
-        email: "gary.bader@utoronto.ca",
-        bio: "Professor at The Donnelly Centre specializing in computational biology, focusing on the development of methods for understanding development, cancer, and regenerative healing.",
-        twitter: "https://twitter.com/garybader1",
-        scholar: "https://scholar.google.com/citations?user=22M9eisAAAAJ&hl=en",
-        linkedin: "https://www.linkedin.com/in/gary-bader-a08673/"
-    },
-    {
-        id: 1,
-        title: "Adriana Dawes",
-        imgSrc: "/member_pics/adriana-dawes.webp",
-        affiliation: "Ohio State University",
-        group: "Advisory Board",
-        bio: "Professor at The Ohio State University specializing in mathematical biology, focusing on mathematical modeling of cell polarization, intracellular dynamics, and developmental biology."
-    },
-    {
-        id: 1,
-        title: "Hiroaki Kitano",
-        imgSrc: "/member_pics/hiroaki-kitano.webp",
-        affiliation: "Kyoto University",
-        group: "Advisory Board",
-        bio: "Executive at Sony Group Corporation and Director of The Systems Biology Institute, specializing in artificial intelligence, robotics, and systems biology.",
-        twitter: "https://x.com/hkitano",
-        scholar: "https://scholar.google.com/citations?user=027fc-oAAAAJ"
-    },
-    {
-        id: 1,
-        title: "James Glazier",
-        imgSrc: "/member_pics/james-glazier.webp",
-        affiliation: "Indiana University",
-        group: "Advisory Board",
-        email: "jaglazier@gmail.com",
-        bio: "Professor of Intelligent Systems Engineering and Director of the Biocomplexity Institute at Indiana University, known for developing computational frameworks like CompuCell3D.",
-        website: "http://www.compucell3d.org"
-    },
-    {
-        id: 1,
-        title: "Janet Rossant",
-        imgSrc: "/member_pics/janet-rossant.webp",
-        affiliation: "SickKids Children's Hospital",
-        group: "Advisory Board",
-        bio: "Senior Scientist Emeritus at The Hospital for Sick Children and President and Scientific Director of the Gairdner Foundation, renowned for her pioneering research in developmental biology and stem cell research. "
-    },
-    {
-        id: 1,
-        title: "Leah Edelstein-Keshet",
-        imgSrc: "/member_pics/leah-edelstein-keshet.webp",
-        affiliation: "University of British Columbia",
-        group: "Advisory Board",
-        email: "keshet@math.ubc.ca",
-        bio: "Emerita professor of mathematics at UBC focusing on mathematical models of cell motility, collective behavior, and embryology."
-    },
-    {
-        id: 1,
-        title: "Peter Zandstra",
-        imgSrc: "/member_pics/peter-zandstra.webp",
-        affiliation: "University of British Columbia",
-        group: "Advisory Board",
-        bio: "Director of the Michael Smith Laboratories and Founding Director of the School of Biomedical Engineering at the University of British Columbia, specializing in stem cell bioengineering and regenerative medicine."
-    },
-    {
-        id: 1,
-        title: "Magdalena Zernicka-Goetz",
-        imgSrc: "/member_pics/magdalena-zernicka-goetz.webp",
-        affiliation: "Caltech",
-        group: "Advisory Board",
-        bio: "Professor of Biology and Biological Engineering at Caltech, recognized for her contributions to developmental biology and embryogenesis.​"
-    },
-    {
-        id: 1,
-        title: "Steven ten Holder",
-        imgSrc: "/member_pics/steven-tenholder.webp",
-        affiliation: "Waterloo",
-        group: "Advisory Board",
-        email: "steve.tenholder@gmail.com",
-        bio: "Co-founder of Acorn Biolabs, inventor on key patents, and creator of a CRISPR anti-viral system for plants. Steven's research spans synthetic biology and mathematical modeling.",
-        twitter: "https://twitter.com/steventen",
-        scholar: "https://scholar.google.com/citations?user=-cBrgMsAAAAJ&hl=en"
-    },
+  // Advisory Board
+  {
+    id: 1,
+    title: "Gary Bader",
+    imgSrc: "/member_pics/gary-bader.webp",
+    affiliation: "University of Toronto",
+    group: "Advisory Board",
+    email: "gary.bader@utoronto.ca",
+    bio: "Professor at The Donnelly Centre specializing in computational biology, focusing on the development of methods for understanding development, cancer, and regenerative healing.",
+    twitter: "https://twitter.com/garybader1",
+    scholar: "https://scholar.google.com/citations?user=22M9eisAAAAJ&hl=en",
+    linkedin: "https://www.linkedin.com/in/gary-bader-a08673/"
+  },
+  {
+    id: 1,
+    title: "Adriana Dawes",
+    imgSrc: "/member_pics/adriana-dawes.webp",
+    affiliation: "Ohio State University",
+    group: "Advisory Board",
+    email: "dawes.33@osu.edu",
+    bio: "Professor at The Ohio State University specializing in mathematical biology, focusing on mathematical modeling of cell polarization, intracellular dynamics, and developmental biology.",
+    twitter: "https://twitter.com/DawesLab",
+    scholar: "https://scholar.google.com/citations?user=a2ZvKcwAAAAJ&hl=en",
+    linkedin: "https://www.linkedin.com/in/adriana-dawes-4407aa1bb",
+    website: "https://math.osu.edu/people/dawes.33"
+  },
+  {
+    id: 1,
+    title: "Hiroaki Kitano",
+    imgSrc: "/member_pics/hiroaki-kitano.webp",
+    affiliation: "Kyoto University",
+    group: "Advisory Board",
+    bio: "Executive at Sony Group Corporation and Director of The Systems Biology Institute, specializing in artificial intelligence, robotics, and systems biology.",
+    twitter: "https://twitter.com/hkitano",
+    scholar: "https://scholar.google.com/citations?user=027fc-oAAAAJ",
+    linkedin: "https://jp.linkedin.com/in/hiroakikitano",
+    website: "https://www.sbi.jp"
+  },
+  {
+    id: 1,
+    title: "James Glazier",
+    imgSrc: "/member_pics/james-glazier.webp",
+    affiliation: "Indiana University",
+    group: "Advisory Board",
+    email: "jaglazier@gmail.com",
+    bio: "Professor of Intelligent Systems Engineering and Director of the Biocomplexity Institute at Indiana University, known for developing computational frameworks like CompuCell3D.",
+    website: "http://www.compucell3d.org",
+    twitter: "https://twitter.com/JamesAGlazier1",
+    scholar: "https://scholar.google.com/citations?user=y0pmefMAAAAJ&hl=en",
+    linkedin: "https://www.linkedin.com/in/jglazier"
+  },
+  {
+    id: 1,
+    title: "Janet Rossant",
+    imgSrc: "/member_pics/janet-rossant.webp",
+    affiliation: "SickKids Children's Hospital",
+    group: "Advisory Board",
+    email: "janet.rossant@gairdner.org",
+    bio: "Senior Scientist Emeritus at The Hospital for Sick Children and President and Scientific Director of the Gairdner Foundation, renowned for her pioneering research in developmental biology and stem cell research.",
+    scholar: "https://scholar.google.com/citations?user=abY9aJ0AAAAJ&hl=en",
+    linkedin: "https://www.linkedin.com/in/janet-rossant-114227263",
+    website: "https://www.gairdner.org/bio/janet-rossant"
+  },
+  {
+    id: 1,
+    title: "Leah Edelstein-Keshet",
+    imgSrc: "/member_pics/leah-edelstein-keshet.webp",
+    affiliation: "University of British Columbia",
+    group: "Advisory Board",
+    email: "keshet@math.ubc.ca",
+    bio: "Emerita professor of mathematics at UBC focusing on mathematical models of cell motility, collective behavior, and embryology.",
+    scholar: "https://scholar.google.com/citations?user=V-nt82cAAAAJ&hl=en",
+    website: "https://www.math.ubc.ca/~keshet/keshet.html"
+  },
+  {
+    id: 1,
+    title: "Peter Zandstra",
+    imgSrc: "/member_pics/peter-zandstra.webp",
+    affiliation: "University of British Columbia",
+    group: "Advisory Board",
+    email: "peter.zandstra@msl.ubc.ca",
+    bio: "Director of the Michael Smith Laboratories and Founding Director of the School of Biomedical Engineering at the University of British Columbia, specializing in stem cell bioengineering and regenerative medicine.",
+    twitter: "https://twitter.com/PZandstra",
+    scholar: "https://scholar.google.com/citations?user=BqF9w_QAAAAJ&hl=en",
+    linkedin: "https://www.linkedin.com/in/peter-zandstra-6197b636",
+    website: "https://www.msl.ubc.ca/people/dr-peter-zandstra/"
+  },
+  {
+    id: 1,
+    title: "Magdalena Zernicka-Goetz",
+    imgSrc: "/member_pics/magdalena-zernicka-goetz.webp",
+    affiliation: "Caltech",
+    group: "Advisory Board",
+    email: "magdaz@caltech.edu",
+    bio: "Professor of Biology and Biological Engineering at Caltech, recognized for her contributions to developmental biology and embryogenesis.",
+    twitter: "https://twitter.com/ZernickaGoetz",
+    scholar: "https://scholar.google.com/citations?user=YA1uMKAAAAAJ&hl=en",
+    linkedin: "https://www.linkedin.com/in/magdalena-zernicka-goetz-b070b3b0",
+    website: "https://zernickagoetzlab.com"
+  },
+  {
+    id: 1,
+    title: "Steven ten Holder",
+    imgSrc: "/member_pics/steven-tenholder.webp",
+    affiliation: "Waterloo",
+    group: "Advisory Board",
+    email: "steve.tenholder@gmail.com",
+    bio: "Co-founder of Acorn Biolabs, inventor on key patents, and creator of a CRISPR anti-viral system for plants. Steven's research spans synthetic biology and mathematical modeling.",
+    twitter: "https://twitter.com/steventen",
+    scholar: "https://scholar.google.com/citations?user=-cBrgMsAAAAJ&hl=en",
+    linkedin: "https://www.linkedin.com/in/steventen"
+  },
 
 // Core Team Members, Theoretical
 		{
@@ -210,7 +237,7 @@ export const memberList: MemberList[] = [
         affiliation: "University of Montreal",
         group: "Core Team Members, Theoretical",
         bio: "Researcher applying computational biology to study disease dynamics and therapeutic responses, with a focus on hematopoietic stem cell dynamics.",
-        scholar: "https://scholar.google.com/citations?user=-cBrgMsAAAAJ&hl=en"
+        scholar: "https://scholar.google.com/citations?user=QYKNsGMAAAAJ&hl=en"
     },
     {
         id: 2,
