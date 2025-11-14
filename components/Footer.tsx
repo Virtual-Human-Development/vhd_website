@@ -36,7 +36,7 @@ const Footer = () => {
         <div>
           {/* Copyright Statement */}
           <p className="text-xs text-right" style={{ color: 'var(--secondary-text-color)' }}>
-            Copyright © 2024 Virtual Human Development
+            Copyright © 2025 Virtual Human Development
           </p>
         </div>
       </div>
